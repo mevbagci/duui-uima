@@ -1,5 +1,6 @@
 StandardCharsets = luajava.bindClass("java.nio.charset.StandardCharsets")
 Class = luajava.bindClass("java.lang.Class")
+Double = luajava.bindClass("java.lang.Double")
 JCasUtil = luajava.bindClass("org.apache.uima.fit.util.JCasUtil")
 DUUIUtils = luajava.bindClass("org.texttechnologylab.DockerUnifiedUIMAInterface.lua.DUUILuaUtils")
 Token = luajava.bindClass("org.texttechnologylab.uima.type.spacy.SpacyToken")
@@ -57,15 +58,38 @@ function serialize(inputCas, outputStream, parameters)
 						local governor = dep:getGovernor()
 
 						if governor ~= nil then
-							-- Find the governor's zero-based index in the current sentence.
+							-- Prefer the actual feature-structure identity. A span alone is
+							-- ambiguous when retokenization creates multiple tokens with the
+							-- same begin/end offsets.
 							for i = 0, sentence_tokens:size() - 1 do
 								local candidate = sentence_tokens:get(i)
 
-								if candidate:getBegin() == governor:getBegin()
-									and candidate:getEnd() == governor:getEnd()
-								then
+								if candidate == governor then
 									head_index = i
 									break
+								end
+							end
+
+							-- Compatibility fallback for CAS implementations whose Lua
+							-- wrappers do not preserve proxy identity. Accept a span match
+							-- only when it identifies exactly one sentence token.
+							if head_index == nil then
+								local matching_index = nil
+								local matching_count = 0
+
+								for i = 0, sentence_tokens:size() - 1 do
+									local candidate = sentence_tokens:get(i)
+
+									if candidate:getBegin() == governor:getBegin()
+										and candidate:getEnd() == governor:getEnd()
+									then
+										matching_index = i
+										matching_count = matching_count + 1
+									end
+								end
+
+								if matching_count == 1 then
+									head_index = matching_index
 								end
 							end
 						end
@@ -165,7 +189,14 @@ function deserialize(inputCas, inputStream)
             index_anno:setLabelV3(index["label_v3"])
             index_anno:setLabelV2(index["label_v2"])
             index_anno:setDescription(index["description"])
-            index_anno:setValue(index["value"])
+            -- UIMA's primitive double feature cannot represent JSON null.
+            -- Preserve "not computable" as NaN so it cannot silently become
+            -- the valid, calculated result 0.0 in the CAS.
+            if index["value"] == nil then
+                index_anno:setValue(Double.NaN)
+            else
+                index_anno:setValue(index["value"])
+            end
             index_anno:setError(index["error"])
             index_anno:setVersion(index["version"])
             index_anno:addToIndexes()
