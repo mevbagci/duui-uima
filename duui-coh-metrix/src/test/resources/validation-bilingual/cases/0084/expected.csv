@@ -1,0 +1,11 @@
+group,index,expected_value,tolerance,description,notes
+Referential Cohesion,CRFNO1,0.5000000000,1e-06,"Noun overlap, adjacent sentences, binary, mean",Separates adjacent-pair means from all-sentence-pair means.
+Referential Cohesion,CRFAO1,0.5000000000,1e-06,"Argument overlap, adjacent sentences, binary, mean",Separates adjacent-pair means from all-sentence-pair means.
+Referential Cohesion,CRFSO1,0.5000000000,1e-06,"Stem overlap, adjacent sentences, binary, mean",Separates adjacent-pair means from all-sentence-pair means.
+Referential Cohesion,CRFNOa,0.3333333333,1e-06,"Noun overlap, all sentences, binary, mean",Separates adjacent-pair means from all-sentence-pair means.
+Referential Cohesion,CRFAOa,0.3333333333,1e-06,"Argument overlap, all sentences, binary, mean",Separates adjacent-pair means from all-sentence-pair means.
+Referential Cohesion,CRFSOa,0.3333333333,1e-06,"Stem overlap, all sentences, binary, mean",Separates adjacent-pair means from all-sentence-pair means.
+Referential Cohesion,CRFCWO1,0.5000000000,1e-06,"Content word overlap, adjacent sentences, proportional, mean",Separates adjacent-pair means from all-sentence-pair means.
+Referential Cohesion,CRFCWO1d,0.0000000000,1e-06,"Content word overlap, adjacent sentences, proportional, standard deviation",Separates adjacent-pair means from all-sentence-pair means.
+Referential Cohesion,CRFCWOa,0.3333333333,1e-06,"Content word overlap, all sentences, proportional, mean",Separates adjacent-pair means from all-sentence-pair means.
+Referential Cohesion,CRFCWOad,0.2357022604,1e-06,"Content word overlap, all sentences, proportional, standard deviation",Separates adjacent-pair means from all-sentence-pair means.

@@ -1,0 +1,11 @@
+group,index,expected_value,tolerance,description,notes
+Referential Cohesion,CRFNO1,0.5000000000,1e-06,"Noun overlap, adjacent sentences, binary, mean",Tests CRFCWO mean and population standard deviation across local and global pairs.
+Referential Cohesion,CRFAO1,0.5000000000,1e-06,"Argument overlap, adjacent sentences, binary, mean",Tests CRFCWO mean and population standard deviation across local and global pairs.
+Referential Cohesion,CRFSO1,0.5000000000,1e-06,"Stem overlap, adjacent sentences, binary, mean",Tests CRFCWO mean and population standard deviation across local and global pairs.
+Referential Cohesion,CRFNOa,0.3333333333,1e-06,"Noun overlap, all sentences, binary, mean",Tests CRFCWO mean and population standard deviation across local and global pairs.
+Referential Cohesion,CRFAOa,0.3333333333,1e-06,"Argument overlap, all sentences, binary, mean",Tests CRFCWO mean and population standard deviation across local and global pairs.
+Referential Cohesion,CRFSOa,0.3333333333,1e-06,"Stem overlap, all sentences, binary, mean",Tests CRFCWO mean and population standard deviation across local and global pairs.
+Referential Cohesion,CRFCWO1,0.5000000000,1e-06,"Content word overlap, adjacent sentences, proportional, mean",Tests CRFCWO mean and population standard deviation across local and global pairs.
+Referential Cohesion,CRFCWO1d,0.5000000000,1e-06,"Content word overlap, adjacent sentences, proportional, standard deviation",Tests CRFCWO mean and population standard deviation across local and global pairs.
+Referential Cohesion,CRFCWOa,0.3333333333,1e-06,"Content word overlap, all sentences, proportional, mean",Tests CRFCWO mean and population standard deviation across local and global pairs.
+Referential Cohesion,CRFCWOad,0.4714045208,1e-06,"Content word overlap, all sentences, proportional, standard deviation",Tests CRFCWO mean and population standard deviation across local and global pairs.

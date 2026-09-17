@@ -18,6 +18,18 @@
     </properties>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <!-- GermaNet is licensed and must only be supplied as an
+                         external runtime mount. Never copy it to
+                         target/classes or package it in the project JAR. -->
+                    <exclude>germanet/**</exclude>
+                </excludes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

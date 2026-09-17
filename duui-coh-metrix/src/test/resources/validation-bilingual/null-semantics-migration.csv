@@ -1,0 +1,556 @@
+suite,case_id,index,old_expected,new_expected,reason
+Descriptive_de,tc007_punctuation_only,DESWC,0,NaN,no word token
+LSA_de,tc001_identical_sentences,LSASSp,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_de,tc001_identical_sentences,LSASSpd,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_de,tc002_lsagn_first_sentence_no_context,LSAPP1,0,NaN,no adjacent paragraph pair with usable vectors
+LSA_de,tc002_lsagn_first_sentence_no_context,LSAPP1d,0,NaN,no adjacent paragraph pair with usable vectors
+LSA_de,tc003_similar_sentences,LSASSp,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_de,tc003_similar_sentences,LSASSpd,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_de,tc004_different_sentences,LSASSp,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_de,tc004_different_sentences,LSASSpd,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_de,tc007_repeated_information,LSASSp,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_de,tc007_repeated_information,LSASSpd,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_de,tc008_new_information,LSASSp,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_de,tc008_new_information,LSASSpd,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_de,tc009_mixed,LSASSp,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_de,tc009_mixed,LSASSpd,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_en,tc001_en_identical_sentences_one_paragraph,LSAPP1,0,NaN,no adjacent paragraph pair with usable vectors
+LSA_en,tc001_en_identical_sentences_one_paragraph,LSAPP1d,0,NaN,no adjacent paragraph pair with usable vectors
+LSA_en,tc002_en_identical_sentences_two_paragraphs,LSASSp,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_en,tc002_en_identical_sentences_two_paragraphs,LSASSpd,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_en,tc004_en_topic_contrast,LSAPP1,0,NaN,no adjacent paragraph pair with usable vectors
+LSA_en,tc004_en_topic_contrast,LSAPP1d,0,NaN,no adjacent paragraph pair with usable vectors
+LSA_en,tc005_en_repeated_then_new,LSAPP1,0,NaN,no adjacent paragraph pair with usable vectors
+LSA_en,tc005_en_repeated_then_new,LSAPP1d,0,NaN,no adjacent paragraph pair with usable vectors
+LSA_en,tc006_en_lsagn_first_sentence_no_context,LSASS1,0,NaN,no adjacent sentence pair with usable vectors
+LSA_en,tc006_en_lsagn_first_sentence_no_context,LSASS1d,0,NaN,no adjacent sentence pair with usable vectors
+LSA_en,tc006_en_lsagn_first_sentence_no_context,LSASSp,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_en,tc006_en_lsagn_first_sentence_no_context,LSASSpd,0,NaN,no within-paragraph sentence pair with usable vectors
+LSA_en,tc006_en_lsagn_first_sentence_no_context,LSAPP1,0,NaN,no adjacent paragraph pair with usable vectors
+LSA_en,tc006_en_lsagn_first_sentence_no_context,LSAPP1d,0,NaN,no adjacent paragraph pair with usable vectors
+Situation Model_de,tc001_smcaus_particle_singleword,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc001_smcaus_particle_singleword,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc001_smcaus_particle_singleword,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc001_smcaus_particle_singleword,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc002_smcaus_particle_multiword,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc002_smcaus_particle_multiword,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc002_smcaus_particle_multiword,SMCAUSlsa,0.0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc002_smcaus_particle_multiword,SMCAUSwn,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc002_smcaus_particle_multiword,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc003_smcaus_verb_plus_multiword_particle,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc003_smcaus_verb_plus_multiword_particle,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc004_smcaus_phrase_no_cross_sentence,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc004_smcaus_phrase_no_cross_sentence,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc004_smcaus_phrase_no_cross_sentence,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc005_smcaus_two_multiword_occurrences,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc005_smcaus_two_multiword_occurrences,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc005_smcaus_two_multiword_occurrences,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc006_smcaus_no_causal_or_intentional_markers,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_de,tc006_smcaus_no_causal_or_intentional_markers,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_de,tc006_smcaus_no_causal_or_intentional_markers,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc006_smcaus_no_causal_or_intentional_markers,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc006_smcaus_no_causal_or_intentional_markers,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_de,tc007_smcaus_single_causal_verb,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_de,tc007_smcaus_single_causal_verb,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc007_smcaus_single_causal_verb,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc007_smcaus_single_causal_verb,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_de,tc008_smcaus_particle_and_causal_verb,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_de,tc008_smcaus_particle_and_causal_verb,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc008_smcaus_particle_and_causal_verb,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc008_smcaus_particle_and_causal_verb,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_de,tc009_smcaus_two_causal_verbs_one_particle,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc009_smcaus_two_causal_verbs_one_particle,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc009_smcaus_two_causal_verbs_one_particle,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc010_smintep_two_intentional_verbs,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_de,tc010_smintep_two_intentional_verbs,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc010_smintep_two_intentional_verbs,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc010_smintep_two_intentional_verbs,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_de,tc011_smcaus_mixed_causal_intentional,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc011_smcaus_mixed_causal_intentional,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc011_smcaus_mixed_causal_intentional,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc012_sminter_um_zu,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc012_sminter_um_zu,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc012_sminter_um_zu,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc013_sminter_um_nicht_zu,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc013_sminter_um_nicht_zu,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc013_sminter_um_nicht_zu,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc014_sminter_auf_dass,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc014_sminter_auf_dass,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc014_sminter_auf_dass,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc015_sminter_auf_dass_legacy_sz,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc015_sminter_auf_dass_legacy_sz,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc015_sminter_auf_dass_legacy_sz,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc016_sminter_two_particles_one_verb,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc016_sminter_two_particles_one_verb,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc016_sminter_two_particles_one_verb,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc017_sminter_verb_without_particle,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc017_sminter_verb_without_particle,SMCAUSlsa,0.0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc017_sminter_verb_without_particle,SMCAUSwn,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc017_sminter_verb_without_particle,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc018_sminter_discontinuous_um_zu_limitation,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc018_sminter_discontinuous_um_zu_limitation,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc018_sminter_discontinuous_um_zu_limitation,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc019_smcaus_semantic_no_verbs,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_de,tc019_smcaus_semantic_no_verbs,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_de,tc019_smcaus_semantic_no_verbs,SMCAUSlsa,0.000000,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc019_smcaus_semantic_no_verbs,SMCAUSwn,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc019_smcaus_semantic_no_verbs,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_de,tc020_smcaus_semantic_single_verb,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc020_smcaus_semantic_single_verb,SMCAUSlsa,0.0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc020_smcaus_semantic_single_verb,SMCAUSwn,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc020_smcaus_semantic_single_verb,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc021_smcaus_semantic_identical_verbs,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc021_smcaus_semantic_identical_verbs,SMCAUSwn,1.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc021_smcaus_semantic_identical_verbs,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc022_smcaus_semantic_related_verbs,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc022_smcaus_semantic_related_verbs,SMCAUSwn,1.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc022_smcaus_semantic_related_verbs,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc023_smcaus_semantic_distinct_verbs,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc023_smcaus_semantic_distinct_verbs,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc023_smcaus_semantic_distinct_verbs,SMCAUSwn,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc023_smcaus_semantic_distinct_verbs,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc024_smcaus_semantic_three_verbs,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc024_smcaus_semantic_three_verbs,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc024_smcaus_semantic_three_verbs,SMCAUSwn,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc024_smcaus_semantic_three_verbs,SMTEMP,0.0,NaN,no adjacent sentence pair
+Situation Model_de,tc025_smtemp_present_repetition,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc025_smtemp_present_repetition,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc025_smtemp_present_repetition,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc026_smtemp_present_past_shift,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc026_smtemp_present_past_shift,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc026_smtemp_present_past_shift,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc027_smtemp_am_progressive_repetition,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_de,tc027_smtemp_am_progressive_repetition,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_de,tc027_smtemp_am_progressive_repetition,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc027_smtemp_am_progressive_repetition,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc028_smtemp_progressive_tense_shift,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_de,tc028_smtemp_progressive_tense_shift,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_de,tc028_smtemp_progressive_tense_shift,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc028_smtemp_progressive_tense_shift,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc029_smtemp_aspect_shift_same_tense,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc029_smtemp_aspect_shift_same_tense,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc029_smtemp_aspect_shift_same_tense,SMCAUSlsa,0.0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc029_smtemp_aspect_shift_same_tense,SMCAUSwn,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc030_smtemp_tense_and_aspect_shift,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc030_smtemp_tense_and_aspect_shift,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc030_smtemp_tense_and_aspect_shift,SMCAUSlsa,0.0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc030_smtemp_tense_and_aspect_shift,SMCAUSwn,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc031_smtemp_gerade_not_progressive,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc031_smtemp_gerade_not_progressive,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc031_smtemp_gerade_not_progressive,SMCAUSlsa,0.0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc031_smtemp_gerade_not_progressive,SMCAUSwn,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc032_smtemp_am_progressive_vs_locative,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_de,tc032_smtemp_am_progressive_vs_locative,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_de,tc032_smtemp_am_progressive_vs_locative,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc032_smtemp_am_progressive_vs_locative,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc033_smtemp_beim_progressive_vs_location,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_de,tc033_smtemp_beim_progressive_vs_location,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_de,tc033_smtemp_beim_progressive_vs_location,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc033_smtemp_beim_progressive_vs_location,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc034_smtemp_completed_vs_unmarked_past,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc034_smtemp_completed_vs_unmarked_past,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc034_smtemp_completed_vs_unmarked_past,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc035_smtemp_completed_perfect_vs_unmarked,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc035_smtemp_completed_perfect_vs_unmarked,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc035_smtemp_completed_perfect_vs_unmarked,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc036_smtemp_telic_present_not_completed,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc036_smtemp_telic_present_not_completed,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc036_smtemp_telic_present_not_completed,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc037_smtemp_negated_completion,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc037_smtemp_negated_completion,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc037_smtemp_negated_completion,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc038_smtemp_almost_completion,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc038_smtemp_almost_completion,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc038_smtemp_almost_completion,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc039_smtemp_attempted_completion,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc039_smtemp_attempted_completion,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc040_smtemp_intended_completion,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc040_smtemp_intended_completion,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc040_smtemp_intended_completion,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc041_smtemp_future_bounded_not_completed,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc041_smtemp_future_bounded_not_completed,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc041_smtemp_future_bounded_not_completed,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc042_smtemp_conditional_completion_blocked,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc042_smtemp_conditional_completion_blocked,SMCAUSwn,0.333,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc043_smtemp_perfect_pluperfect_shift,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc043_smtemp_perfect_pluperfect_shift,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc043_smtemp_perfect_pluperfect_shift,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc044_smtemp_present_future_shift,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc044_smtemp_present_future_shift,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc044_smtemp_present_future_shift,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc045_smtemp_future_i_future_ii_equivalence,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc045_smtemp_future_i_future_ii_equivalence,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc045_smtemp_future_i_future_ii_equivalence,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc046_smtemp_present_passive_not_future,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc046_smtemp_present_passive_not_future,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc046_smtemp_present_passive_not_future,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc047_smtemp_passive_tense_shift,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc047_smtemp_passive_tense_shift,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc047_smtemp_passive_tense_shift,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc048_smtemp_state_passive_vs_sein_perfect,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc048_smtemp_state_passive_vs_sein_perfect,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc049_smtemp_modal_present,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc049_smtemp_modal_present,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc049_smtemp_modal_present,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc050_smtemp_modal_past,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc050_smtemp_modal_past,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc050_smtemp_modal_past,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc051_smtemp_future_passive,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc051_smtemp_future_passive,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc051_smtemp_future_passive,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc052_smtemp_lexical_auxiliary_forms,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_de,tc052_smtemp_lexical_auxiliary_forms,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_de,tc052_smtemp_lexical_auxiliary_forms,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc052_smtemp_lexical_auxiliary_forms,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc053_smtemp_ersatzinfinitiv_perfect,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc053_smtemp_ersatzinfinitiv_perfect,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc053_smtemp_ersatzinfinitiv_perfect,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc054_smtemp_ersatzinfinitiv_tense_shift,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc054_smtemp_ersatzinfinitiv_tense_shift,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc054_smtemp_ersatzinfinitiv_tense_shift,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc055_smtemp_perception_ersatzinfinitiv,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc055_smtemp_perception_ersatzinfinitiv,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc055_smtemp_perception_ersatzinfinitiv,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc056_smtemp_passive_perfect_tense_shift,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc056_smtemp_passive_perfect_tense_shift,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc056_smtemp_passive_perfect_tense_shift,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc057_smtemp_future_perfect_sein,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc058_smtemp_future_state_passive,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_de,tc058_smtemp_future_state_passive,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_de,tc058_smtemp_future_state_passive,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_de,tc059_smtemp_perfect_progressive,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_de,tc059_smtemp_perfect_progressive,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_de,tc059_smtemp_perfect_progressive,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_de,tc059_smtemp_perfect_progressive,SMCAUSwn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Situation Model_en,tc001_smcaus_particle_because,SMCAUSr,0.0000000000,NaN,no causal-verb denominator
+Situation Model_en,tc001_smcaus_particle_because,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc001_smcaus_particle_because,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_en,tc002_smcaus_particle_in_order_to,SMCAUSr,0.0000000000,NaN,no causal-verb denominator
+Situation Model_en,tc002_smcaus_particle_in_order_to,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_en,tc002_smcaus_particle_in_order_to,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_en,tc002_smcaus_particle_in_order_to,SMCAUSwn,0,NaN,fewer than two verbs for semantic comparison
+Situation Model_en,tc002_smcaus_particle_in_order_to,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_en,tc003_smcaus_verb_plus_multiword_particle,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_en,tc004_smcaus_phrase_no_cross_sentence,SMCAUSr,0.0000000000,NaN,no causal-verb denominator
+Situation Model_en,tc004_smcaus_phrase_no_cross_sentence,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc005_smcaus_two_multiword_occurrences,SMCAUSr,0.0000000000,NaN,no causal-verb denominator
+Situation Model_en,tc005_smcaus_two_multiword_occurrences,SMINTEr,0.0,NaN,no intentional-verb denominator
+Situation Model_en,tc006_sminter_in_order_to,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_en,tc006_sminter_in_order_to,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_en,tc007_sminter_in_order_not_to,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc007_sminter_in_order_not_to,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_en,tc008_sminter_so_as_to,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_en,tc008_sminter_so_as_to,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_en,tc009_sminter_so_as_not_to,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_en,tc009_sminter_so_as_not_to,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_en,tc010_sminter_in_order_that,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc010_sminter_in_order_that,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_en,tc011_sminter_lest,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc011_sminter_lest,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_en,tc012_sminter_two_particles_one_verb,SMCAUSr,0.0,NaN,no causal-verb denominator
+Situation Model_en,tc012_sminter_two_particles_one_verb,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_en,tc013_sminter_verb_without_particle,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc013_sminter_verb_without_particle,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_en,tc013_sminter_verb_without_particle,SMCAUSwn,0,NaN,fewer than two verbs for semantic comparison
+Situation Model_en,tc013_sminter_verb_without_particle,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_en,tc014_smcaus_semantic_no_verbs,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc014_smcaus_semantic_no_verbs,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc014_smcaus_semantic_no_verbs,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_en,tc014_smcaus_semantic_no_verbs,SMCAUSwn,0,NaN,fewer than two verbs for semantic comparison
+Situation Model_en,tc014_smcaus_semantic_no_verbs,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_en,tc015_smcaus_semantic_single_verb,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc015_smcaus_semantic_single_verb,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc015_smcaus_semantic_single_verb,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_en,tc015_smcaus_semantic_single_verb,SMCAUSwn,0,NaN,fewer than two verbs for semantic comparison
+Situation Model_en,tc015_smcaus_semantic_single_verb,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_en,tc016_smcaus_semantic_repeated_verb,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc016_smcaus_semantic_repeated_verb,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc016_smcaus_semantic_repeated_verb,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_en,tc016_smcaus_semantic_repeated_verb,SMCAUSwn,0,NaN,fewer than two verbs for semantic comparison
+Situation Model_en,tc017_smcaus_semantic_distinct_verbs,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc017_smcaus_semantic_distinct_verbs,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc017_smcaus_semantic_distinct_verbs,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_en,tc017_smcaus_semantic_distinct_verbs,SMCAUSwn,0,NaN,fewer than two verbs for semantic comparison
+Situation Model_en,tc018_smintep_intentional_seed_plan,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc018_smintep_intentional_seed_plan,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_en,tc018_smintep_intentional_seed_plan,SMCAUSwn,0,NaN,fewer than two verbs for semantic comparison
+Situation Model_en,tc018_smintep_intentional_seed_plan,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_en,tc019_smcaus_causal_seed_cause,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc019_smcaus_causal_seed_cause,SMCAUSlsa,0,NaN,fewer than two verbs with usable vectors
+Situation Model_en,tc019_smcaus_causal_seed_cause,SMCAUSwn,0,NaN,fewer than two verbs for semantic comparison
+Situation Model_en,tc019_smcaus_causal_seed_cause,SMTEMP,0,NaN,no adjacent sentence pair
+Situation Model_en,tc020_smtemp_present_repetition,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc020_smtemp_present_repetition,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc021_smtemp_present_past_shift,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc021_smtemp_present_past_shift,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc022_smtemp_present_progressive,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc022_smtemp_present_progressive,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc023_smtemp_progressive_tense_shift,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc023_smtemp_progressive_tense_shift,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc024_smtemp_aspect_shift_same_tense,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc024_smtemp_aspect_shift_same_tense,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc025_smtemp_present_perfect,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc025_smtemp_present_perfect,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc026_smtemp_perfect_tense_shift,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc026_smtemp_perfect_tense_shift,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc027_smtemp_perfect_vs_simple_present,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc027_smtemp_perfect_vs_simple_present,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc028_smtemp_perfect_progressive,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc028_smtemp_perfect_progressive,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc029_smtemp_perfect_progressive_tense_shift,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc029_smtemp_perfect_progressive_tense_shift,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc030_smtemp_future_simple,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc030_smtemp_future_simple,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc031_smtemp_present_future_shift,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc031_smtemp_present_future_shift,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc032_smtemp_future_progressive,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc032_smtemp_future_progressive,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc033_smtemp_future_perfect,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc033_smtemp_future_perfect,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc034_smtemp_future_perfect_progressive,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc034_smtemp_future_perfect_progressive,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc035_smtemp_future_aspect_shift,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc035_smtemp_future_aspect_shift,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc036_smtemp_present_passive,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc036_smtemp_present_passive,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc037_smtemp_passive_tense_shift,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc037_smtemp_passive_tense_shift,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc038_smtemp_progressive_passive,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc038_smtemp_progressive_passive,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc039_smtemp_perfect_passive,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc039_smtemp_perfect_passive,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc040_smtemp_future_passive,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc040_smtemp_future_passive,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc041_smtemp_future_perfect_passive,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc041_smtemp_future_perfect_passive,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc042_smtemp_modal_present_not_future,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc042_smtemp_modal_present_not_future,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc043_smtemp_conditional_vs_present,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc043_smtemp_conditional_vs_present,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc044_smtemp_conditional_progressive,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc044_smtemp_conditional_progressive,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc045_smtemp_conditional_perfect,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc045_smtemp_conditional_perfect,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc046_smtemp_conditional_perfect_progressive,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc046_smtemp_conditional_perfect_progressive,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc047_smtemp_modal_passive,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc047_smtemp_modal_passive,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc048_smtemp_conditional_perfect_passive,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc048_smtemp_conditional_perfect_passive,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc049_smtemp_modal_perfect,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc049_smtemp_modal_perfect,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc050_smtemp_tense_and_aspect_shift_zero,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc050_smtemp_tense_and_aspect_shift_zero,SMINTEr,0,NaN,no intentional-verb denominator
+Situation Model_en,tc051_smtemp_three_sentence_pair_average,SMCAUSr,0,NaN,no causal-verb denominator
+Situation Model_en,tc051_smtemp_three_sentence_pair_average,SMINTEr,0,NaN,no intentional-verb denominator
+Syntactic Complexity_de,tc001_de_simple_lexical,SYNMEDpos,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc001_de_simple_lexical,SYNMEDwrd,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc001_de_simple_lexical,SYNMEDlem,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc001_de_simple_lexical,SYNSTRUTa,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc001_de_simple_lexical,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_de,tc004_de_copular_adjective,SYNMEDpos,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc004_de_copular_adjective,SYNMEDwrd,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc004_de_copular_adjective,SYNMEDlem,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc004_de_copular_adjective,SYNSTRUTa,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc004_de_copular_adjective,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_de,tc005_de_copular_noun,SYNMEDpos,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc005_de_copular_noun,SYNMEDwrd,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc005_de_copular_noun,SYNMEDlem,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc005_de_copular_noun,SYNSTRUTa,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc005_de_copular_noun,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_de,tc006_de_fronted_subordinate_clause,SYNMEDpos,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc006_de_fronted_subordinate_clause,SYNMEDwrd,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc006_de_fronted_subordinate_clause,SYNMEDlem,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc006_de_fronted_subordinate_clause,SYNSTRUTa,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc006_de_fronted_subordinate_clause,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_de,tc007_de_sentence_mean,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_de,tc012_root_first,SYNMEDpos,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc012_root_first,SYNMEDwrd,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc012_root_first,SYNMEDlem,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc012_root_first,SYNSTRUTa,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc012_root_first,SYNSTRUTt,0.0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_de,tc013_de_perfect_auxiliary,SYNMEDpos,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc013_de_perfect_auxiliary,SYNMEDwrd,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc013_de_perfect_auxiliary,SYNMEDlem,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc013_de_perfect_auxiliary,SYNSTRUTa,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc013_de_perfect_auxiliary,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_de,tc014_root_last,SYNMEDpos,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc014_root_last,SYNMEDwrd,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc014_root_last,SYNMEDlem,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc014_root_last,SYNSTRUTa,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc014_root_last,SYNSTRUTt,0.0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_de,tc015_de_modal_auxiliary,SYNMEDpos,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc015_de_modal_auxiliary,SYNMEDwrd,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc015_de_modal_auxiliary,SYNMEDlem,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc015_de_modal_auxiliary,SYNSTRUTa,0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc015_de_modal_auxiliary,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_de,tc016_noun_chunk_simple,SYNMEDpos,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc016_noun_chunk_simple,SYNMEDwrd,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc016_noun_chunk_simple,SYNMEDlem,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc016_noun_chunk_simple,SYNSTRUTa,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc016_noun_chunk_simple,SYNSTRUTt,0.0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_de,tc018_noun_chunk_complex,SYNMEDpos,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc018_noun_chunk_complex,SYNMEDwrd,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc018_noun_chunk_complex,SYNMEDlem,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc018_noun_chunk_complex,SYNSTRUTa,0.0,NaN,no adjacent sentence pair
+Syntactic Complexity_de,tc018_noun_chunk_complex,SYNSTRUTt,0.0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc001_en_simple_lexical,SYNMEDpos,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc001_en_simple_lexical,SYNMEDwrd,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc001_en_simple_lexical,SYNMEDlem,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc001_en_simple_lexical,SYNSTRUTa,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc001_en_simple_lexical,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc002_en_perfect_auxiliary,SYNMEDpos,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc002_en_perfect_auxiliary,SYNMEDwrd,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc002_en_perfect_auxiliary,SYNMEDlem,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc002_en_perfect_auxiliary,SYNSTRUTa,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc002_en_perfect_auxiliary,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc003_en_modal_auxiliary,SYNMEDpos,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc003_en_modal_auxiliary,SYNMEDwrd,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc003_en_modal_auxiliary,SYNMEDlem,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc003_en_modal_auxiliary,SYNSTRUTa,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc003_en_modal_auxiliary,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc004_en_copular_adjective,SYNMEDpos,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc004_en_copular_adjective,SYNMEDwrd,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc004_en_copular_adjective,SYNMEDlem,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc004_en_copular_adjective,SYNSTRUTa,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc004_en_copular_adjective,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc005_en_copular_noun,SYNMEDpos,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc005_en_copular_noun,SYNMEDwrd,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc005_en_copular_noun,SYNMEDlem,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc005_en_copular_noun,SYNSTRUTa,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc005_en_copular_noun,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc006_en_fronted_subordinate_clause,SYNMEDpos,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc006_en_fronted_subordinate_clause,SYNMEDwrd,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc006_en_fronted_subordinate_clause,SYNMEDlem,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc006_en_fronted_subordinate_clause,SYNSTRUTa,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc006_en_fronted_subordinate_clause,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc007_en_sentence_mean,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc008_en_noun_chunk_simple,SYNMEDpos,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc008_en_noun_chunk_simple,SYNMEDwrd,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc008_en_noun_chunk_simple,SYNMEDlem,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc008_en_noun_chunk_simple,SYNSTRUTa,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc008_en_noun_chunk_simple,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc009_en_noun_chunk_complex,SYNMEDpos,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc009_en_noun_chunk_complex,SYNMEDwrd,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc009_en_noun_chunk_complex,SYNMEDlem,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc009_en_noun_chunk_complex,SYNSTRUTa,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc009_en_noun_chunk_complex,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc010_en_identical_sentences,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc011_en_add_object,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc012_en_word_change,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc014_en_hierarchy_structure,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc015_en_fronted_clause,SYNMEDpos,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc015_en_fronted_clause,SYNMEDwrd,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc015_en_fronted_clause,SYNMEDlem,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc015_en_fronted_clause,SYNSTRUTa,0,NaN,no adjacent sentence pair
+Syntactic Complexity_en,tc015_en_fronted_clause,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc016_en_passive_structure,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Syntactic Complexity_en,tc017_en_modifier_difference,SYNSTRUTt,0,NaN,no cross-paragraph sentence pair
+Word Information_de,tc001_common_words,WRDPOLc,4.2,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc001_common_words,WRDHYPn,15.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc001_common_words,WRDHYPv,7.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc001_common_words,WRDHYPnv,11.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc002_rare_words,WRDPOLc,1.4,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc002_rare_words,WRDHYPn,7.33333333333333,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc002_rare_words,WRDHYPv,5.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc002_rare_words,WRDHYPnv,6.6,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc003_inflections,WRDPOLc,5.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc003_inflections,WRDHYPn,11.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc003_inflections,WRDHYPv,9.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc003_inflections,WRDHYPnv,10,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc004_known_unknown,WRDPOLc,2.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc004_known_unknown,WRDHYPn,13.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc004_known_unknown,WRDHYPv,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc004_known_unknown,WRDHYPnv,13,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc005_mixed_pos,WRDPOLc,3.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc005_mixed_pos,WRDHYPn,6.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc005_mixed_pos,WRDHYPv,4.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc005_mixed_pos,WRDHYPnv,5.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc006_nouns_and_two_verbs,WRDPOLc,5.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc006_nouns_and_two_verbs,WRDHYPn,15.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc006_nouns_and_two_verbs,WRDHYPv,9.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc006_nouns_and_two_verbs,WRDHYPnv,12.25,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc007_pronouns,WRDPOLc,5.125,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc007_pronouns,WRDHYPn,9.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc007_pronouns,WRDHYPv,7.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc007_pronouns,WRDHYPnv,7.28571428571429,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc008_plural_noun_past_verb,WRDPOLc,3.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc008_plural_noun_past_verb,WRDHYPn,16,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc008_plural_noun_past_verb,WRDHYPv,6.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc008_plural_noun_past_verb,WRDHYPnv,11,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc009_multiple_inflections,WRDPOLc,3.666667,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc009_multiple_inflections,WRDHYPn,15.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc009_multiple_inflections,WRDHYPv,9.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc009_multiple_inflections,WRDHYPnv,13.3333333,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc010_two_inflected_verbs,WRDPOLc,14.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc010_two_inflected_verbs,WRDHYPn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc010_two_inflected_verbs,WRDHYPv,9.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc010_two_inflected_verbs,WRDHYPnv,9.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc011_no_content_words,WRDPOLc,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc011_no_content_words,WRDHYPn,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc011_no_content_words,WRDHYPv,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc011_no_content_words,WRDHYPnv,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc012_simple_words,WRDPOLc,4.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc012_simple_words,WRDHYPn,15.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc012_simple_words,WRDHYPv,7.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc012_simple_words,WRDHYPnv,11.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc013_single_known,WRDPOLc,2.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc013_single_known,WRDHYPn,13.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc013_single_known,WRDHYPv,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc013_single_known,WRDHYPnv,13,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc014_noun_and_verb,WRDPOLc,3.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc014_noun_and_verb,WRDHYPn,16,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc014_noun_and_verb,WRDHYPv,6.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc014_noun_and_verb,WRDHYPnv,11,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc015_repeated_words,WRDPOLc,5.57142857142857,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc015_repeated_words,WRDHYPn,16.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc015_repeated_words,WRDHYPv,9.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc015_repeated_words,WRDHYPnv,12.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc016_two_known,WRDPOLc,1.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc016_two_known,WRDHYPn,11.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc016_two_known,WRDHYPv,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc016_two_known,WRDHYPnv,11,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc017_repeated,WRDPOLc,1.66666666666667,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc017_repeated,WRDHYPn,11.6666666666667,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc017_repeated,WRDHYPv,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc017_repeated,WRDHYPnv,11.6666666666667,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc018_single_verb,WRDPOLc,19.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc018_single_verb,WRDHYPn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc018_single_verb,WRDHYPv,10.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc018_single_verb,WRDHYPnv,10.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc019_unknown_words,WRDPOLc,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc019_unknown_words,WRDHYPn,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc019_unknown_words,WRDHYPv,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc019_unknown_words,WRDHYPnv,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc020_mixed_frequency,WRDPOLc,2.75,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc020_mixed_frequency,WRDHYPn,15.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc020_mixed_frequency,WRDHYPv,5.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc020_mixed_frequency,WRDHYPnv,10.25,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc021_rare_names_numbers,WRDPOLc,2.6,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc021_rare_names_numbers,WRDHYPn,10.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc021_rare_names_numbers,WRDHYPv,7.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc021_rare_names_numbers,WRDHYPnv,9,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc022_two_nouns_and_verb,WRDPOLc,3.666667,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc022_two_nouns_and_verb,WRDHYPn,15.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc022_two_nouns_and_verb,WRDHYPv,9.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc022_two_nouns_and_verb,WRDHYPnv,13.3333333,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc023_sentence_minimum,WRDPOLc,6.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc023_sentence_minimum,WRDHYPn,16.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc023_sentence_minimum,WRDHYPv,9.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc023_sentence_minimum,WRDHYPnv,12.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc024_two_verbs,WRDPOLc,14.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc024_two_verbs,WRDHYPn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc024_two_verbs,WRDHYPv,9.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc024_two_verbs,WRDHYPnv,9.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc025_unknown_only,WRDPOLc,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc025_unknown_only,WRDHYPn,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc025_unknown_only,WRDHYPv,0.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc025_unknown_only,WRDHYPnv,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc026_punctuation_contractions,WRDPOLc,3.25,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc026_punctuation_contractions,WRDHYPn,14.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc026_punctuation_contractions,WRDHYPv,3.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc026_punctuation_contractions,WRDHYPnv,8.5,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc027_verb_lemma,WRDPOLc,19.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc027_verb_lemma,WRDHYPn,0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc027_verb_lemma,WRDHYPv,10.0,NaN,the pinned image does not bundle the licensed GermaNet resource
+Word Information_de,tc027_verb_lemma,WRDHYPnv,10.0,NaN,the pinned image does not bundle the licensed GermaNet resource

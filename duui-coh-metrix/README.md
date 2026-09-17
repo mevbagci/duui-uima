@@ -112,6 +112,13 @@ Some resource-backed indices use available-case evaluation: uncovered items
 are excluded and a value is calculated from the remaining valid observations.
 If too few valid observations remain, the result is `None`/`Double.NaN`.
 
+The Wiener Sachtextformel indices `RDWSTF1_textstat` through
+`RDWSTF4_textstat` are defined for German only. For English and other
+languages, these four indices are not applicable and therefore return
+`None`/`Double.NaN` instead of a numeric value. This behavior is already
+visible in the completed English validation reports; no separate label or
+single-purpose WSTF testcase is required.
+
 ## Index labels
 
 Every output index has a `label_ttlab` value. If an implementation uses the
@@ -124,6 +131,32 @@ resource:
 
 - German: `_germanet`
 - English: `_wordnet`
+
+## Validation
+
+The Docker component is regression-tested through
+`CohMetrixDockerValidationTest`. The Java test loads 322 frozen bilingual CAS
+snapshots, removes previous Coh-Metrix output, processes each CAS with the
+Docker image, and checks 3,496 curated index expectations. The frozen upstream
+annotations make changes in Coh-Metrix, its Lua communication layer, and the
+container service reproducible without rerunning spaCy or Syntok.
+
+The final online and Maven-offline runs on 2026-09-17 used the same image
+digest and produced:
+
+```text
+Tests run: 3499, Failures: 0, Errors: 0, Skipped: 9
+BUILD SUCCESS
+```
+
+The nine skipped assertions are documented external limitations: two Pyphen
+syllabification differences, three frozen spaCy annotation differences for
+German `SMTEMP`, and four GermaNet expectations for which the licensed
+resource is intentionally absent from the static test image.
+
+Setup, execution commands, expectation semantics, and the remaining optional
+test hardening are documented in
+[`JAVA_VALIDATION_TESTS.md`](JAVA_VALIDATION_TESTS.md).
 
 ## How to use
 

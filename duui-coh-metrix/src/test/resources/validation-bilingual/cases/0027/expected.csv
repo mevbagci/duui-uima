@@ -1,0 +1,12 @@
+group,index,expected_value,tolerance,description,notes
+Descriptive,DESPC,1,0.0001,Paragraph count,
+Descriptive,DESSC,1,0.0001,Sentence count,
+Descriptive,DESWC,1,0.0001,Word count,
+Descriptive,DESPL,1,0.0001,Paragraph length mean,
+Descriptive,DESPLd,0,0.0001,Paragraph length std,
+Descriptive,DESSL,1,0.0001,Sentence length mean,
+Descriptive,DESSLd,0,0.0001,Sentence length std,
+Descriptive,DESWLsy,1,0.0001,Word syllables mean,REAL_WORD_REFERENCE_2026-09-01: Haus is monosyllabic; the expected mean is 1. The same word already contributes one syllable in the passing tc002_simple_words reference.
+Descriptive,DESWLsyd,0,0.0001,Word syllables std,REAL_WORD_REFERENCE_2026-09-01: A single observed word has population SD 0.
+Descriptive,DESWLlt,4,0.0001,Word length letters mean,REAL_WORD_REFERENCE_2026-09-01: Haus preserves the original four-letter control.
+Descriptive,DESWLltd,0,0.0001,Word length letters std,REAL_WORD_REFERENCE_2026-09-01: A single four-letter word has population SD 0.

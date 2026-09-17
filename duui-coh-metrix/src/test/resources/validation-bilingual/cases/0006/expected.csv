@@ -1,0 +1,10 @@
+group,index,expected_value,tolerance,description,notes
+Connectives,CNCAll,315.789473684,0.01,"All connectives combined, incidence",
+Connectives,CNCCaus,52.6315789474,0.01,"Causal connectives, incidence",
+Connectives,CNCLogic,52.6315789474,0.01,"Logical connectives, incidence",
+Connectives,CNCADC,52.6315789474,0.01,"Adversative connectives, incidence",
+Connectives,CNCTemp,0,0.01,"Temporal connectives, incidence",
+Connectives,CNCTempx,105.263157895,0.01,"Expanded temporal connectives, incidence",
+Connectives,CNCAdd,105.263157895,0.01,"Additive connectives, incidence",
+Connectives,CNCPos,52.6315789474,0.01,"Positive connectives, incidence",
+Connectives,CNCNeg,52.6315789474,0.01,"Negative connectives, incidence",

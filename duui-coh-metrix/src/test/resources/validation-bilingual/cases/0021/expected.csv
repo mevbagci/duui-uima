@@ -1,0 +1,12 @@
+group,index,expected_value,tolerance,description,notes
+Descriptive,DESPC,1.0,0.0001,Paragraph count,
+Descriptive,DESSC,3.0,0.0001,Sentence count,
+Descriptive,DESWC,10.0,0.0001,Word count,
+Descriptive,DESPL,3.0,0.0001,Paragraph length mean,
+Descriptive,DESPLd,0.0,0.0001,Paragraph length stddev,
+Descriptive,DESSL,3.3333333333333335,0.0001,Sentence length mean,
+Descriptive,DESSLd,1.699673171197595,0.0001,Sentence length stddev,
+Descriptive,DESWLsy,1.4,0.0001,Word syllable mean,
+Descriptive,DESWLsyd,0.4898979485566356,0.0001,Word syllable stddev,
+Descriptive,DESWLlt,4.4,0.0001,Word letter mean,
+Descriptive,DESWLltd,1.562049935,0.0001,Word letter stddev,

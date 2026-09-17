@@ -1,0 +1,12 @@
+group,index,expected_value,tolerance,description,notes
+Descriptive,DESPC,1.0,0.0001,Paragraph count,
+Descriptive,DESSC,1.0,0.0001,Sentence count,
+Descriptive,DESWC,NaN,0.0001,Word count,Expected NaN under the input-sufficiency rule: no word token.
+Descriptive,DESPL,1.0,0.0001,Paragraph length mean,
+Descriptive,DESPLd,0.0,0.0001,Paragraph length stddev,
+Descriptive,DESSL,NaN,0.0001,Sentence length mean,Expected NaN under the input-sufficiency rule for the static validation image.
+Descriptive,DESSLd,NaN,0.0001,Sentence length stddev,Expected NaN under the input-sufficiency rule for the static validation image.
+Descriptive,DESWLsy,NaN,0.0001,Word syllable mean,Expected NaN under the input-sufficiency rule for the static validation image.
+Descriptive,DESWLsyd,NaN,0.0001,Word syllable stddev,Expected NaN under the input-sufficiency rule for the static validation image.
+Descriptive,DESWLlt,NaN,0.0001,Word letter mean,Expected NaN under the input-sufficiency rule for the static validation image.
+Descriptive,DESWLltd,NaN,0.0001,Word letter stddev,Expected NaN under the input-sufficiency rule for the static validation image.

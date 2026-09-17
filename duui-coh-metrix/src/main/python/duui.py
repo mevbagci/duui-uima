@@ -160,6 +160,51 @@ class TextImagerCapability(BaseModel):
     reproducible: bool
 
 
+# Annotation sufficiency helpers. A finite zero is only meaningful if the
+# annotation layer required by the metric is actually present. These helpers
+# deliberately operate per feature family; they are not a global request gate.
+def _non_punct_tokens(sentence: Sentence) -> List[Token]:
+    return [token for token in sentence.tokens if not token.is_punct]
+
+
+def _has_complete_pos_annotations(sentence: Sentence) -> bool:
+    tokens = _non_punct_tokens(sentence)
+    return bool(tokens) and all(
+        bool((token.pos_coarse or "").strip())
+        and (token.pos_coarse or "").strip() != "--"
+        for token in tokens
+    )
+
+
+def _has_complete_fine_pos_annotations(sentence: Sentence) -> bool:
+    return _has_complete_pos_annotations(sentence) and all(
+        bool((token.pos_value or "").strip())
+        and (token.pos_value or "").strip() != "--"
+        for token in _non_punct_tokens(sentence)
+    )
+
+
+def _has_complete_dependency_annotations(sentence: Sentence) -> bool:
+    tokens = _non_punct_tokens(sentence)
+    return bool(tokens) and all(
+        bool((token.dep_type or "").strip())
+        and token.head_index is not None
+        for token in tokens
+    )
+
+
+def _has_usable_lemma(token: Token) -> bool:
+    return bool((token.lemma or "").strip()) and token.lemma.strip() != "--"
+
+
+def _has_analyzable_verbal_predicate(sentence: Sentence) -> bool:
+    """True if tense/aspect can be grounded in an observed verbal token."""
+    return any(
+        token.pos_coarse in {"VERB", "AUX"}
+        for token in _non_punct_tokens(sentence)
+    )
+
+
 class TextImagerDocumentation(BaseModel):
     annotator_name: str
     version: str
@@ -275,15 +320,26 @@ def get_input_output() -> TextImagerInputOutput:
 # Reliable.
 def cm_despc(paragraphs: List[Paragraph]) -> Optional[float]:
     # Paragraph count, number of paragraphs
-    if not paragraphs:
+    valid_paragraphs = [
+        paragraph
+        for paragraph in paragraphs
+        if (paragraph.text or "").strip()
+        or any(sentence.tokens for sentence in paragraph.sentences)
+    ]
+    if not valid_paragraphs:
         return None
-    return len(paragraphs)
+    return len(valid_paragraphs)
 
 # LAY: How many sentences are in the text?
 # Reliable.
 def cm_dessc(paragraphs: List[Paragraph]) -> Optional[float]:
     # Sentence count, number of sentences
-    sentence_count = sum(len(p.sentences) for p in paragraphs)
+    sentence_count = sum(
+        1
+        for paragraph in paragraphs
+        for sentence in paragraph.sentences
+        if (sentence.text or "").strip() or sentence.tokens
+    )
     return sentence_count if sentence_count > 0 else None
 
 # LAY: How many words (excluding punctuation) are in the text?
@@ -305,7 +361,13 @@ def cm_deswc(paragraphs: List[Paragraph]) -> Optional[float]:
 # ↑ Higher = longer paragraphs. Reliable.
 def cm_despl(paragraphs: List[Paragraph]) -> Optional[float]:
     # Paragraph length, number of sentences, mean
-    sentence_counts = [len(p.sentences) for p in paragraphs]
+    sentence_counts = [
+        sum(1 for sentence in paragraph.sentences
+            if (sentence.text or "").strip() or sentence.tokens)
+        for paragraph in paragraphs
+        if (paragraph.text or "").strip()
+        or any(sentence.tokens for sentence in paragraph.sentences)
+    ]
     return (
         np.mean(sentence_counts)
         if sentence_counts and sum(sentence_counts) > 0
@@ -316,7 +378,13 @@ def cm_despl(paragraphs: List[Paragraph]) -> Optional[float]:
 # ↑ Higher = more variable paragraph sizes. Reliable.
 def cm_despld(paragraphs: List[Paragraph]) -> Optional[float]:
     # Paragraph length, number of sentences, standard deviation
-    sentence_counts = [len(p.sentences) for p in paragraphs]
+    sentence_counts = [
+        sum(1 for sentence in paragraph.sentences
+            if (sentence.text or "").strip() or sentence.tokens)
+        for paragraph in paragraphs
+        if (paragraph.text or "").strip()
+        or any(sentence.tokens for sentence in paragraph.sentences)
+    ]
     return (
         np.std(sentence_counts)
         if sentence_counts and sum(sentence_counts) > 0
@@ -331,6 +399,7 @@ def cm_dessl(paragraphs: List[Paragraph]) -> Optional[float]:
         sum(1 for token in sentence.tokens if not token.is_punct)
         for paragraph in paragraphs
         for sentence in paragraph.sentences
+        if (sentence.text or "").strip() or sentence.tokens
     ]
     return (
         np.mean(sentence_lengths)
@@ -346,6 +415,7 @@ def cm_dessld(paragraphs: List[Paragraph]) -> Optional[float]:
         sum(1 for token in sentence.tokens if not token.is_punct)
         for paragraph in paragraphs
         for sentence in paragraph.sentences
+        if (sentence.text or "").strip() or sentence.tokens
     ]
     return (
         np.std(sentence_lengths)
@@ -417,12 +487,24 @@ ud_content_pos = {"NOUN","PROPN", "VERB", "ADJ", "ADV"}
 # including pronouns and proper nouns.
 ud_stem_content_pos = {"NOUN","PROPN","VERB","ADJ","ADV","PRON",}
 
-def _noun_overlap(sentence_a: Sentence, sentence_b: Sentence) -> int:
+def _noun_overlap(sentence_a: Sentence, sentence_b: Sentence) -> Optional[int]:
+    if not all(_has_complete_pos_annotations(sentence)
+               for sentence in (sentence_a, sentence_b)):
+        return None
     nouns_a = set([t.text for t in sentence_a.tokens if t.pos_coarse and t.pos_coarse in ud_noun_pos])
     nouns_b = set([t.text for t in sentence_b.tokens if t.pos_coarse and t.pos_coarse in ud_noun_pos])
     return len(nouns_a.intersection(nouns_b))
 
-def _argument_overlap(sentence_a: Sentence, sentence_b: Sentence) -> int:
+def _argument_overlap(sentence_a: Sentence, sentence_b: Sentence) -> Optional[int]:
+    if not all(_has_complete_pos_annotations(sentence)
+               for sentence in (sentence_a, sentence_b)):
+        return None
+    if any(
+        token.pos_coarse in ud_noun_pos and not _has_usable_lemma(token)
+        for sentence in (sentence_a, sentence_b)
+        for token in _non_punct_tokens(sentence)
+    ):
+        return None
     nouns_a = {
         t.lemma
         for t in sentence_a.tokens
@@ -460,7 +542,17 @@ def _argument_overlap(sentence_a: Sentence, sentence_b: Sentence) -> int:
 def _stem_overlap(
     sentence_nouns: Sentence,
     sentence_contents: Sentence
-) -> int:
+) -> Optional[int]:
+    if not all(_has_complete_pos_annotations(sentence)
+               for sentence in (sentence_nouns, sentence_contents)):
+        return None
+    if any(
+        token.pos_coarse in ud_content_pos.union(ud_noun_pos)
+        and not _has_usable_lemma(token)
+        for sentence in (sentence_nouns, sentence_contents)
+        for token in _non_punct_tokens(sentence)
+    ):
+        return None
     nouns = {
         token.lemma.lower()
         for token in sentence_nouns.tokens
@@ -503,6 +595,9 @@ def _word_overlap(
     current_sentence: Sentence,
     previous_sentence: Sentence
 ) -> Optional[float]:
+    if not all(_has_complete_pos_annotations(sentence)
+               for sentence in (current_sentence, previous_sentence)):
+        return None
     current_content_words = [
         token.text.lower()
         for token in current_sentence.tokens
@@ -545,8 +640,9 @@ def cm_crfno1(sentences: List[Sentence]) -> Optional[float]:
             continue
         current_sentence = sentences[sind]
         previous_sentence = sentences[sind-1]
-        noun_overlap = min(1, _noun_overlap(current_sentence, previous_sentence))
-        noun_overlap_per_sentence.append(noun_overlap)
+        noun_overlap = _noun_overlap(current_sentence, previous_sentence)
+        if noun_overlap is not None:
+            noun_overlap_per_sentence.append(min(1, noun_overlap))
     return np.mean(noun_overlap_per_sentence)
 
 # LAY: Do any two sentences in the text share at least one noun?
@@ -560,8 +656,9 @@ def cm_crfnoa(sentences: List[Sentence]) -> Optional[float]:
                 continue
             sentence_a = sentences[sinda]
             sentence_b = sentences[sindb]
-            noun_overlap = min(1, _noun_overlap(sentence_a, sentence_b))
-            noun_overlap_per_sentence.append(noun_overlap)
+            noun_overlap = _noun_overlap(sentence_a, sentence_b)
+            if noun_overlap is not None:
+                noun_overlap_per_sentence.append(min(1, noun_overlap))
     return np.mean(noun_overlap_per_sentence)
 
 # LAY: Do adjacent sentences share a noun or pronoun (an "argument")?
@@ -574,8 +671,9 @@ def cm_crfao1(sentences: List[Sentence]) -> Optional[float]:
             continue
         current_sentence = sentences[sind]
         previous_sentence = sentences[sind-1]
-        argument_overlap = min(1, _argument_overlap(current_sentence, previous_sentence))
-        argument_overlap_per_sentence.append(argument_overlap)
+        argument_overlap = _argument_overlap(current_sentence, previous_sentence)
+        if argument_overlap is not None:
+            argument_overlap_per_sentence.append(min(1, argument_overlap))
     return np.mean(argument_overlap_per_sentence)
 
 # LAY: Do any two sentences share a noun or pronoun?
@@ -589,8 +687,9 @@ def cm_crfaoa(sentences: List[Sentence]) -> Optional[float]:
                 continue
             sentence_a = sentences[sinda]
             sentence_b = sentences[sindb]
-            argument_overlap = min(1, _argument_overlap(sentence_a, sentence_b))
-            argument_overlap_per_sentence.append(argument_overlap)
+            argument_overlap = _argument_overlap(sentence_a, sentence_b)
+            if argument_overlap is not None:
+                argument_overlap_per_sentence.append(min(1, argument_overlap))
     return np.mean(argument_overlap_per_sentence)
 
 # LAY: Do adjacent sentences share a word stem (e.g. "running"/"runs")?
@@ -603,8 +702,9 @@ def cm_crfso1(sentences: List[Sentence]) -> Optional[float]:
             continue
         current_sentence = sentences[sind]
         previous_sentence = sentences[sind-1]
-        stem_overlap = min(1, _stem_overlap(current_sentence, previous_sentence))
-        stem_overlap_per_sentence.append(stem_overlap)
+        stem_overlap = _stem_overlap(current_sentence, previous_sentence)
+        if stem_overlap is not None:
+            stem_overlap_per_sentence.append(min(1, stem_overlap))
     return np.mean(stem_overlap_per_sentence)
 
 # LAY: Do any two sentences share a word stem?
@@ -620,8 +720,9 @@ def cm_crfsoa(sentences: List[Sentence]) -> Optional[float]:
                 continue
             previous_sentence = sentences[sinda]
             current_sentence = sentences[sindb]
-            stem_overlap = min(1, _stem_overlap(current_sentence,previous_sentence))
-            stem_overlap_per_sentence.append(stem_overlap)
+            stem_overlap = _stem_overlap(current_sentence,previous_sentence)
+            if stem_overlap is not None:
+                stem_overlap_per_sentence.append(min(1, stem_overlap))
     return np.mean(stem_overlap_per_sentence)
 
 # LAY: What share of content words is shared between adjacent sentences? (mean)
@@ -850,6 +951,13 @@ def cm_synnp(sentences: List[Sentence], noun_chunks: List[NounChunk], lang: str)
     else:
         dep_map = dep_map_en
 
+    if noun_chunks and not all(
+        _has_complete_pos_annotations(sentence)
+        and _has_complete_dependency_annotations(sentence)
+        for sentence in sentences
+    ):
+        return None
+
     modifier_counts = []
     for noun_chunk in noun_chunks:
         for sentence in sentences:
@@ -915,20 +1023,18 @@ def cm_synmedpos(sentences: List[Sentence]) -> Optional[float]:
     # applying character-level Levenshtein to space-joined POS strings.
     # Example: replacing NOUN with PRON counts as one substitution, independent
     # of the number of characters in the POS labels.
-    sent_pos_sequences = [
-        [token.pos_coarse for token in sent.tokens]
-        for sent in sentences
-    ]
-
     pos_dists = []
 
-    for i in range(len(sent_pos_sequences) - 1):
-        pos_dists.append(
-            _normalized_sequence_edit_distance(
-                sent_pos_sequences[i],
-                sent_pos_sequences[i + 1]
-            )
+    for first, second in zip(sentences, sentences[1:]):
+        if not (_has_complete_pos_annotations(first)
+                and _has_complete_pos_annotations(second)):
+            continue
+        distance = _normalized_sequence_edit_distance(
+            [token.pos_coarse for token in first.tokens],
+            [token.pos_coarse for token in second.tokens]
         )
+        if np.isfinite(distance):
+            pos_dists.append(distance)
 
     return np.mean(pos_dists) if pos_dists else np.nan
 
@@ -941,20 +1047,17 @@ def cm_synmedwrd(sentences: List[Sentence]) -> Optional[float]:
     # FV2 fix: compare complete words as sequence elements instead of
     # characters of a joined sentence string. Replacing one word therefore
     # counts as one substitution regardless of the word's character length.
-    sent_word_sequences = [
-        [token.text for token in sent.tokens]
-        for sent in sentences
-    ]
-
     word_dists = []
 
-    for i in range(len(sent_word_sequences) - 1):
-        word_dists.append(
-            _normalized_sequence_edit_distance(
-                sent_word_sequences[i],
-                sent_word_sequences[i + 1]
-            )
+    for first, second in zip(sentences, sentences[1:]):
+        if not first.tokens or not second.tokens:
+            continue
+        distance = _normalized_sequence_edit_distance(
+            [token.text for token in first.tokens],
+            [token.text for token in second.tokens]
         )
+        if np.isfinite(distance):
+            word_dists.append(distance)
 
     return np.mean(word_dists) if word_dists else np.nan
 
@@ -967,20 +1070,23 @@ def cm_synmedlem(sentences: List[Sentence]) -> Optional[float]:
     # FV2 fix: compare complete lemmas as sequence elements instead of
     # characters of a joined lemma string. This ensures that inflectional
     # variants mapped to the same lemma do not introduce artificial distance.
-    sent_lemma_sequences = [
-        [token.lemma for token in sent.tokens]
-        for sent in sentences
-    ]
-
     lemma_dists = []
 
-    for i in range(len(sent_lemma_sequences) - 1):
-        lemma_dists.append(
-            _normalized_sequence_edit_distance(
-                sent_lemma_sequences[i],
-                sent_lemma_sequences[i + 1]
-            )
+    for first, second in zip(sentences, sentences[1:]):
+        if not first.tokens or not second.tokens:
+            continue
+        if any(
+            not _has_usable_lemma(token)
+            for sentence in (first, second)
+            for token in _non_punct_tokens(sentence)
+        ):
+            continue
+        distance = _normalized_sequence_edit_distance(
+            [token.lemma for token in first.tokens],
+            [token.lemma for token in second.tokens]
         )
+        if np.isfinite(distance):
+            lemma_dists.append(distance)
 
     return np.mean(lemma_dists) if lemma_dists else np.nan
 
@@ -1078,6 +1184,26 @@ def _build_dependency_tree(sentence: Sentence):
             children[parent_index].append(token_index)
 
     if len(roots) != 1:
+        return None
+
+    # A valid dependency tree must cover every non-punctuation token exactly
+    # once from its single ROOT. This rejects detached cyclic islands that
+    # were previously ignored and made an incomplete tree look valid.
+    reached = set()
+    active_path = set()
+
+    def _visit(token_index: int) -> bool:
+        if token_index in active_path or token_index in reached:
+            return False
+        active_path.add(token_index)
+        reached.add(token_index)
+        for child_index in children[token_index]:
+            if not _visit(child_index):
+                return False
+        active_path.remove(token_index)
+        return True
+
+    if not _visit(roots[0]) or reached != valid_indices:
         return None
 
     # Preserve sentence order among siblings.
@@ -1541,6 +1667,20 @@ def _is_infinitive_token(sentence: Sentence, token_index: int, lang: str) -> boo
         ):
             return True
 
+    # Bare infinitive after do-support: "did not eat". spaCy attaches the
+    # finite do auxiliary to the lexical VB, analogous to a modal auxiliary.
+    for child_index, child in enumerate(sentence.tokens):
+        if child_index == token_index or child.head_index != token_index:
+            continue
+        child_lemma = (child.lemma or child.text or "").strip().lower()
+        child_dep = (child.dep_type or "").strip().lower()
+        if (
+            child.pos_coarse == "AUX"
+            and child_lemma == "do"
+            and child_dep in {"aux", "auxpass", "aux:pass"}
+        ):
+            return True
+
     return False
 
 
@@ -1566,6 +1706,18 @@ def _count_metrics(
         "neg_count": 0,
         "gerund_count": 0,
         "infinitive_count": 0,
+        "has_pos_annotations": all(
+            _has_complete_pos_annotations(sentence)
+            for sentence in sentences
+        ) if sentences else False,
+        "has_fine_pos_annotations": all(
+            _has_complete_fine_pos_annotations(sentence)
+            for sentence in sentences
+        ) if sentences else False,
+        "has_dependency_annotations": all(
+            _has_complete_dependency_annotations(sentence)
+            for sentence in sentences
+        ) if sentences else False,
     }
 
     for sentence in sentences:
@@ -1654,6 +1806,17 @@ def cm_drnp(
     # H12: DRNP incidence per 1000 words.
     if metrics is None:
         metrics = _count_metrics(sentences, noun_chunks, lang)
+    if not metrics["has_pos_annotations"]:
+        return None
+    if not noun_chunks and any(
+        token.pos_coarse in {"NOUN", "PROPN", "PRON"}
+        for sentence in sentences
+        for token in _non_punct_tokens(sentence)
+    ):
+        # With an observed nominal candidate, an empty noun-chunk layer is not
+        # evidence of zero noun phrases. Verbless/non-nominal inputs can still
+        # produce a genuine zero without a global noun-chunk requirement.
+        return None
     return _incidence(metrics["noun_phrase_count"], metrics["total_tokens"])
 
 # LAY: How many verb-phrase approximations occur per 1,000 words?
@@ -1669,6 +1832,8 @@ def cm_drvp(
     # FV3 approximation: verbal phrase/projection density, not raw VERB density.
     if metrics is None:
         metrics = _count_metrics(sentences, noun_chunks, lang)
+    if not metrics["has_pos_annotations"]:
+        return None
     return _incidence(metrics["verb_phrase_count"], metrics["total_tokens"])
 
 # LAY: How many adverbial-phrase approximations occur per 1,000 words?
@@ -1684,6 +1849,9 @@ def cm_drap(
     # FV3 approximation: maximal dependency-based adverbial phrases.
     if metrics is None:
         metrics = _count_metrics(sentences, noun_chunks, lang)
+    if not (metrics["has_pos_annotations"]
+            and metrics["has_dependency_annotations"]):
+        return None
     return _incidence(metrics["adverbial_phrase_count"], metrics["total_tokens"])
 
 # LAY: How many prepositional-phrase approximations occur per 1,000 words?
@@ -1700,6 +1868,8 @@ def cm_drpp(
     # Retained: ADP/preposition incidence is the current V3 approximation.
     if metrics is None:
         metrics = _count_metrics(sentences, noun_chunks, lang)
+    if not metrics["has_pos_annotations"]:
+        return None
     return _incidence(metrics["prep_count"], metrics["total_tokens"])
 
 # LAY: How many agentless passive constructions occur per 1,000 words?
@@ -1713,6 +1883,9 @@ def cm_drpval(
 ) -> Optional[float]:
     if metrics is None:
         metrics = _count_metrics(sentences, noun_chunks, lang)
+    if not (metrics["has_pos_annotations"]
+            and metrics["has_dependency_annotations"]):
+        return None
     return _incidence(
         metrics["passive_sentences"],
         metrics["total_tokens"]
@@ -1729,6 +1902,8 @@ def cm_drneg(
     # H12: DRNEG incidence per 1000 words.
     if metrics is None:
         metrics = _count_metrics(sentences, noun_chunks, lang)
+    if not metrics["has_dependency_annotations"]:
+        return None
     return _incidence(metrics["neg_count"], metrics["total_tokens"])
 
 # LAY: How many English gerunds ("-ing" verb forms) per 1,000 words?
@@ -1748,6 +1923,9 @@ def cm_drgerund(
     if metrics is None:
         metrics = _count_metrics(sentences, noun_chunks, lang)
 
+    if not metrics["has_fine_pos_annotations"]:
+        return None
+
     return _incidence(metrics["gerund_count"], metrics["total_tokens"])
 
 # LAY: How many infinitive verb forms (to/zu + VERB) per 1,000 words?
@@ -1761,6 +1939,9 @@ def cm_drinf(
     # H12: DRINF incidence per 1000 words.
     if metrics is None:
         metrics = _count_metrics(sentences, noun_chunks, lang)
+    if not (metrics["has_fine_pos_annotations"]
+            and metrics["has_dependency_annotations"]):
+        return None
     return _incidence(metrics["infinitive_count"], metrics["total_tokens"])
 
 def _incidence(count, total_words):
@@ -1830,7 +2011,7 @@ def _normalize_morph_number(
 # to several person/number categories simultaneously.
 def _count_words(
     sentences: List[Sentence]
-) -> Dict[str, float]:
+) -> Dict[str, Optional[float]]:
 
     counters = {
         "noun": 0,
@@ -1846,6 +2027,14 @@ def _count_words(
     }
 
     total_words = 0
+
+    # Without a complete coarse-POS layer an apparent zero category count is
+    # not an observation. Keep all POS-incidence end values non-computable.
+    if not sentences or not all(
+        _has_complete_pos_annotations(sentence)
+        for sentence in sentences
+    ):
+        return {key: None for key in counters}
 
     for sentence in sentences:
         for token in sentence.tokens:
@@ -1908,7 +2097,7 @@ def _count_words(
 
 def _wrd_precompute(
     sentences: List[Sentence]
-) -> Dict[str, float]:
+) -> Dict[str, Optional[float]]:
     return _count_words(sentences)
 
 # ============================================================================
@@ -2451,8 +2640,25 @@ connectives_list = {
 import re as _re_conn
 
 def _normalize_tokens_for_connectives(text: str) -> List[str]:
-    # Lowercase, split on whitespace, strip surrounding punctuation from each token.
-    return [_re_conn.sub(r"^[^\w]+|[^\w]+$", "", t.lower()) for t in text.split()]
+    # Preserve punctuation/newline boundaries so a multi-word connective can
+    # never be assembled across sentence or clause boundaries. At the same
+    # time, punctuation attached to a word is split off, so "run,but" still
+    # exposes the valid single-word connective "but".
+    boundary = "__CONNECTIVE_BOUNDARY__"
+    normalized = []
+    for match in _re_conn.finditer(
+        r"\w+(?:['’]\w+)*|[^\w\s]+|\s+",
+        (text or "").lower(),
+    ):
+        item = match.group(0)
+        if item.isspace():
+            if "\n" in item or "\r" in item:
+                normalized.append(boundary)
+        elif _re_conn.fullmatch(r"\w+(?:['’]\w+)*", item):
+            normalized.append(item)
+        else:
+            normalized.append(boundary)
+    return normalized
 
 _CONNECTIVE_CATEGORY_TO_INDEX = {
     "Causal": "CNCCaus",
@@ -2475,7 +2681,9 @@ def _build_connective_patterns(
         for expression in language_lists.get(lang, set()):
 
             pattern = tuple(
-                expression.lower().split()
+                token
+                for token in _normalize_tokens_for_connectives(expression)
+                if token != "__CONNECTIVE_BOUNDARY__"
             )
 
             if not pattern:
@@ -3266,6 +3474,18 @@ def _sm_get_data(sentences: List[Sentence]):
 
     return words, tags, morph_tense, lemmas, poses, vectors
 
+
+def _has_complete_sm_verb_annotations(sentences: List[Sentence]) -> bool:
+    """Check only the annotation layers required by inventory verb counts."""
+    return bool(sentences) and all(
+        _has_complete_pos_annotations(sentence)
+        and all(
+            token.pos_coarse != "VERB" or _has_usable_lemma(token)
+            for token in _non_punct_tokens(sentence)
+        )
+        for sentence in sentences
+    )
+
 # FV1 fix: Changed token counter to exclude punctuation.
 def _count_non_punct_tokens(sentences: List[Sentence]) -> int:
     # Use the same non-punctuation word count as DESWC to maintain
@@ -3318,7 +3538,8 @@ def count_verbs(
     poses,
     words,
     lemmas,
-    causal_practical_set
+    causal_practical_set,
+    sentences: Optional[List[Sentence]] = None,
 ):
     counters = {
         "causal_verbs": 0,
@@ -3345,12 +3566,37 @@ def count_verbs(
             if pos != "VERB":
                 continue
 
-            lemma = lemmas[i][j].lower()
+            lemma = (lemmas[i][j] or "").strip().lower()
+            lemma_candidates = {lemma} if lemma else set()
 
-            if lemma in causal_practical_set["causal_verbs"]:
+            # Reconstruct dependency-linked separable/phrasal verbs for the
+            # lexical inventories. German "löst ... aus" must be able to match
+            # "auslösen"; English particles can match WordNet forms such as
+            # "break down". Each verbal token still contributes at most once.
+            if sentences is not None and i < len(sentences):
+                sentence = sentences[i]
+                for child_index, child in enumerate(sentence.tokens):
+                    if child_index == j or child.head_index != j:
+                        continue
+                    dep = (child.dep_type or "").strip().lower()
+                    if dep not in {"svp", "prt", "compound:prt"}:
+                        continue
+                    particle = (child.lemma or child.text or "").strip().lower()
+                    if particle and lemma:
+                        lemma_candidates.update({
+                            particle + lemma,
+                            lemma + particle,
+                            lemma + " " + particle,
+                        })
+
+            if lemma_candidates.intersection(
+                causal_practical_set["causal_verbs"]
+            ):
                 counters["causal_verbs"] += 1
 
-            if lemma in causal_practical_set["intentional_verbs"]:
+            if lemma_candidates.intersection(
+                causal_practical_set["intentional_verbs"]
+            ):
                 counters["intentional_verbs"] += 1
 
     return counters
@@ -4149,6 +4395,8 @@ def _detect_german_completion(sentence: Sentence):
     return (False, 'high', 'bounded_but_not_completed')
 
 def _detect_german_aspect(sentence: Sentence):
+    if not _has_analyzable_verbal_predicate(sentence):
+        return ('UNKNOWN', 'none', 'no_verbal_predicate')
     progressive, progressive_confidence, progressive_evidence = _detect_german_progressive(sentence)
     if progressive is True:
         return ('IN_PROGRESS', progressive_confidence, progressive_evidence)
@@ -4303,6 +4551,8 @@ def _detect_english_grammatical_aspect(sentence: Sentence):
     return ('NONE', 'none', None)
 
 def _detect_english_aspect(sentence: Sentence):
+    if not _has_analyzable_verbal_predicate(sentence):
+        return ('UNKNOWN', 'none', 'no_verbal_predicate')
     grammatical_aspect, confidence, evidence = _detect_english_grammatical_aspect(sentence)
     if grammatical_aspect == 'PROGRESSIVE':
         return ('IN_PROGRESS', confidence, 'progressive')
@@ -4335,6 +4585,8 @@ def cm_smcausv(sentences: List[Sentence], lang: str) -> Optional[float]:
     causal_set = _causal_practical_verbs_intentional(lang)
     if causal_set is None:
         return None
+    if not _has_complete_sm_verb_annotations(sentences):
+        return None
     words, _, _, lemmas, poses, _ = _sm_get_data(
         sentences
     )
@@ -4342,7 +4594,8 @@ def cm_smcausv(sentences: List[Sentence], lang: str) -> Optional[float]:
         poses,
         words,
         lemmas,
-        causal_set
+        causal_set,
+        sentences,
     )
     # FV1 fix: Use the same non-punctuation word count as DESWC to maintain
     # consistent word counting across incidence-based indices.
@@ -4362,6 +4615,8 @@ def cm_smcausvp(sentences: List[Sentence], lang: str) -> Optional[float]:
     causal_set = _causal_practical_verbs_intentional(lang)
     if causal_set is None:
         return None
+    if not _has_complete_sm_verb_annotations(sentences):
+        return None
     words, _, _, lemmas, poses, _ = _sm_get_data(
         sentences
     )
@@ -4369,7 +4624,8 @@ def cm_smcausvp(sentences: List[Sentence], lang: str) -> Optional[float]:
         poses,
         words,
         lemmas,
-        causal_set
+        causal_set,
+        sentences,
     )
     # FV1 fix: Use the same non-punctuation word count as DESWC to maintain
     # consistent word counting across incidence-based indices.
@@ -4390,6 +4646,8 @@ def cm_smintep(sentences: List[Sentence], lang: str) -> Optional[float]:
     causal_set = _causal_practical_verbs_intentional(lang)
     if causal_set is None:
         return None
+    if not _has_complete_sm_verb_annotations(sentences):
+        return None
     words, _, _, lemmas, poses, _ = _sm_get_data(
         sentences
     )
@@ -4397,7 +4655,8 @@ def cm_smintep(sentences: List[Sentence], lang: str) -> Optional[float]:
         poses,
         words,
         lemmas,
-        causal_set
+        causal_set,
+        sentences,
     )
     # FV1 fix: Use the same non-punctuation word count as DESWC to maintain
     # consistent word counting across incidence-based indices.
@@ -4413,6 +4672,8 @@ def cm_smcausr(sentences: List[Sentence], lang: str) -> Optional[float]:
     causal_set = _causal_practical_verbs_intentional(lang)
     if causal_set is None:
         return None
+    if not _has_complete_sm_verb_annotations(sentences):
+        return None
     words, _, _, lemmas, poses, _ = _sm_get_data(
         sentences
     )
@@ -4420,7 +4681,8 @@ def cm_smcausr(sentences: List[Sentence], lang: str) -> Optional[float]:
         poses,
         words,
         lemmas,
-        causal_set
+        causal_set,
+        sentences,
     )
     causal_verbs = counts["causal_verbs"]
 
@@ -4437,6 +4699,8 @@ def cm_sminter(sentences: List[Sentence], lang: str) -> Optional[float]:
     causal_set = _causal_practical_verbs_intentional(lang)
     if causal_set is None:
         return None
+    if not _has_complete_sm_verb_annotations(sentences):
+        return None
     words, _, _, lemmas, poses, _ = _sm_get_data(
         sentences
     )
@@ -4444,7 +4708,8 @@ def cm_sminter(sentences: List[Sentence], lang: str) -> Optional[float]:
         poses,
         words,
         lemmas,
-        causal_set
+        causal_set,
+        sentences,
     )
     intentional_verbs = counts["intentional_verbs"]
 
@@ -4456,12 +4721,41 @@ def cm_sminter(sentences: List[Sentence], lang: str) -> Optional[float]:
     return np.round(ratio, 3)
 
 def get_SMCAUSlsa(poses: List[List[str]], vectors: List[List[List[Any]]]):
-    all_verbs = []
+    valid_verbs_by_dimension = defaultdict(list)
     for i, sent in enumerate(poses):
         for j, pos in enumerate(sent):
             if pos == "VERB":
-                if vectors[i][j] is not None:
-                    all_verbs.append(vectors[i][j])
+                if i >= len(vectors) or j >= len(vectors[i]):
+                    continue
+                vector = vectors[i][j]
+                if vector is None:
+                    continue
+                try:
+                    vector_array = np.asarray(vector, dtype=float)
+                except (TypeError, ValueError):
+                    continue
+                if (
+                    vector_array.ndim != 1
+                    or vector_array.size == 0
+                    or not np.all(np.isfinite(vector_array))
+                    or np.linalg.norm(vector_array) == 0
+                ):
+                    continue
+                valid_verbs_by_dimension[vector_array.size].append(vector_array)
+
+    if not valid_verbs_by_dimension:
+        return None
+
+    # A single malformed token must not dictate the vector space. Use the
+    # dimension with the greatest valid coverage; a tie is deterministic.
+    selected_dimension = max(
+        valid_verbs_by_dimension,
+        key=lambda dimension: (
+            len(valid_verbs_by_dimension[dimension]),
+            dimension,
+        ),
+    )
+    all_verbs = valid_verbs_by_dimension[selected_dimension]
 
     # M3 fix: previously used adjacent pairs only. Spec description is identical
     # to SMCAUSwn, and LSASSp also uses all pairs \u2014 harmonize SMCAUSlsa to
@@ -4471,12 +4765,12 @@ def get_SMCAUSlsa(poses: List[List[str]], vectors: List[List[List[Any]]]):
         vec_i = all_verbs[i]
         for j in range(i + 1, len(all_verbs)):
             vec_j = all_verbs[j]
-            if vec_i is not None and vec_j is not None:
-                denom = np.linalg.norm(vec_i) * np.linalg.norm(vec_j)
-                if denom == 0:
-                    continue
-                cos_sim = np.dot(vec_i, vec_j) / denom
-                cos_similarities.append(cos_sim)
+            denom = np.linalg.norm(vec_i) * np.linalg.norm(vec_j)
+            if denom == 0:
+                continue
+            cos_sim = np.dot(vec_i, vec_j) / denom
+            if np.isfinite(cos_sim):
+                cos_similarities.append(float(cos_sim))
 
     return np.mean(cos_similarities) if cos_similarities else None
 
@@ -4645,11 +4939,32 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         tokens_count = sum(1 for t in tokens if not t.is_punct)
         has_readability_input = tokens_count > 0 and bool(sentences)
 
-        tokens_vector_length = 0
+        vector_dimension_counts = defaultdict(int)
         for t in tokens:
-            if t.has_vector:
-                tokens_vector_length = len(t.vector)
-                break
+            if not t.has_vector or t.vector is None:
+                continue
+            try:
+                vector_array = np.asarray(t.vector, dtype=float)
+            except (TypeError, ValueError):
+                continue
+            if (
+                vector_array.ndim == 1
+                and vector_array.size > 0
+                and np.all(np.isfinite(vector_array))
+            ):
+                vector_dimension_counts[vector_array.size] += 1
+
+        tokens_vector_length = (
+            max(
+                vector_dimension_counts,
+                key=lambda dimension: (
+                    vector_dimension_counts[dimension],
+                    dimension,
+                ),
+            )
+            if vector_dimension_counts
+            else 0
+        )
 
         ### Descriptive
 
@@ -4664,6 +4979,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=1,
             type_name="Descriptive",
+            label_ttlab='DESPC',
             label_v3="DESPC",
             label_v2="READNP",
             description="Paragraph count, number of paragraphs",
@@ -4682,6 +4998,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=2,
             type_name="Descriptive",
+            label_ttlab='DESSC',
             label_v3="DESSC",
             label_v2="READNS",
             description="Sentence count, number of sentences",
@@ -4700,6 +5017,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=3,
             type_name="Descriptive",
+            label_ttlab='DESWC',
             label_v3="DESWC",
             label_v2="READNW",
             description="Word count, number of words",
@@ -4718,6 +5036,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=4,
             type_name="Descriptive",
+            label_ttlab='DESPL',
             label_v3="DESPL",
             label_v2="READAPL",
             description="Paragraph length, number of sentences, mean",
@@ -4736,6 +5055,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=5,
             type_name="Descriptive",
+            label_ttlab='DESPLd',
             label_v3="DESPLd",
             label_v2="n/a",
             description="Paragraph length, number of sentences, standard deviation",
@@ -4754,6 +5074,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=6,
             type_name="Descriptive",
+            label_ttlab='DESSL',
             label_v3="DESSL",
             label_v2="READASL",
             description="Sentence length, number of words, mean",
@@ -4772,6 +5093,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=7,
             type_name="Descriptive",
+            label_ttlab='DESSLd',
             label_v3="DESSLd",
             label_v2="n/a",
             description="Sentence length, number of words, standard deviation",
@@ -4790,6 +5112,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=8,
             type_name="Descriptive",
+            label_ttlab='DESWLsy',
             label_v3="DESWLsy",
             label_v2="READASW",
             description="Word length, number of syllables, mean",
@@ -4808,6 +5131,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=9,
             type_name="Descriptive",
+            label_ttlab='DESWLsyd',
             label_v3="DESWLsyd",
             label_v2="n/a",
             description="Word length, number of syllables, standard deviation",
@@ -4826,6 +5150,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=10,
             type_name="Descriptive",
+            label_ttlab='DESWLlt',
             label_v3="DESWLlt",
             label_v2="n/a",
             description="Word length, number of letters, mean",
@@ -4844,6 +5169,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=11,
             type_name="Descriptive",
+            label_ttlab='DESWLltd',
             label_v3="DESWLltd",
             label_v2="n/a",
             description="Word length, number of letters, standard deviation",
@@ -5186,6 +5512,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=28,
             type_name="Referential Cohesion",
+            label_ttlab='CRFNO1',
             label_v3="CRFNO1",
             label_v2="CRFBN1um",
             description="Noun overlap, adjacent sentences, binary, mean",
@@ -5204,6 +5531,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=29,
             type_name="Referential Cohesion",
+            label_ttlab='CRFAO1',
             label_v3="CRFAO1",
             label_v2="CRFBA1um",
             description="Argument overlap, adjacent sentences, binary, mean",
@@ -5222,6 +5550,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=30,
             type_name="Referential Cohesion",
+            label_ttlab='CRFSO1',
             label_v3="CRFSO1",
             label_v2="CRFBS1um",
             description="Stem overlap, adjacent sentences, binary, mean",
@@ -5240,6 +5569,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=31,
             type_name="Referential Cohesion",
+            label_ttlab='CRFNOa',
             label_v3="CRFNOa",
             label_v2="CRFBNaum",
             description="Noun overlap, all sentences, binary, mean",
@@ -5258,6 +5588,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=32,
             type_name="Referential Cohesion",
+            label_ttlab='CRFAOa',
             label_v3="CRFAOa",
             label_v2="CRFBAaum",
             description="Argument overlap, all sentences, binary, mean",
@@ -5276,6 +5607,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=33,
             type_name="Referential Cohesion",
+            label_ttlab='CRFSOa',
             label_v3="CRFSOa",
             label_v2="CRFBSaum",
             description="Stem overlap, all sentences, binary, mean",
@@ -5294,6 +5626,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=34,
             type_name="Referential Cohesion",
+            label_ttlab='CRFCWO1',
             label_v3="CRFCWO1",
             label_v2="CRFPC1um",
             description="Content word overlap, adjacent sentences, proportional, mean",
@@ -5312,6 +5645,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=35,
             type_name="Referential Cohesion",
+            label_ttlab='CRFCWO1d',
             label_v3="CRFCWO1d",
             label_v2="n/a",
             description="Content word overlap, adjacent sentences, proportional, standard deviation",
@@ -5330,6 +5664,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=36,
             type_name="Referential Cohesion",
+            label_ttlab='CRFCWOa',
             label_v3="CRFCWOa",
             label_v2="CRFPCaum",
             description="Content word overlap, all sentences, proportional, mean",
@@ -5348,6 +5683,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=37,
             type_name="Referential Cohesion",
+            label_ttlab='CRFCWOad',
             label_v3="CRFCWOad",
             label_v2="n/a",
             description="Content word overlap, all sentences, proportional, standard deviation",
@@ -5538,6 +5874,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=46,
             type_name="Lexical Diversity",
+            label_ttlab='LDTTRc',
             label_v3="LDTTRc",
             label_v2="TYPTOKc",
             description="Lexical diversity, type-token ratio, content word lemmas",
@@ -5556,6 +5893,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=47,
             type_name="Lexical Diversity",
+            label_ttlab='LDTTRa',
             label_v3="LDTTRa",
             label_v2="n/a",
             description="Lexical diversity, type-token ratio, all words",
@@ -5574,6 +5912,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=48,
             type_name="Lexical Diversity",
+            label_ttlab='LDMTLDa',
             label_v3="LDMTLDa",
             label_v2="LEXDIVTD",
             description="Lexical diversity, MTLD, all words",
@@ -5592,6 +5931,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=49,
             type_name="Lexical Diversity",
+            label_ttlab='LDVOCDa',
             label_v3="LDVOCDa",
             label_v2="LEXDIVVD",
             description="Lexical diversity, VOCD, all words",
@@ -5792,7 +6132,11 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=59,
             type_name="Situation Model",
-            label_ttlab="SMCAUSv_germanet",
+            label_ttlab=(
+                "SMCAUSv_germanet"
+                if lang == "de"
+                else "SMCAUSv_wordnet"
+            ),
             label_v3="SMCAUSv",
             label_v2="CAUSV",
             description="Causal verb incidence",
@@ -5811,7 +6155,11 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=60,
             type_name="Situation Model",
-            label_ttlab="SMCAUSvp_germanet",
+            label_ttlab=(
+                "SMCAUSvp_germanet"
+                if lang == "de"
+                else "SMCAUSvp_wordnet"
+            ),
             label_v3="SMCAUSvp",
             label_v2="CAUSVP",
             description="Causal verbs and causal particles incidence",
@@ -5830,7 +6178,11 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=61,
             type_name="Situation Model",
-            label_ttlab="SMINTEp_germanet",
+            label_ttlab=(
+                "SMINTEp_germanet"
+                if lang == "de"
+                else "SMINTEp_wordnet"
+            ),
             label_v3="SMINTEp",
             label_v2="INTEi",
             description="Intentional verbs incidence",
@@ -5849,7 +6201,11 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=62,
             type_name="Situation Model",
-            label_ttlab="SMCAUSr_germanet",
+            label_ttlab=(
+                "SMCAUSr_germanet"
+                if lang == "de"
+                else "SMCAUSr_wordnet"
+            ),
             label_v3="SMCAUSr",
             label_v2="CAUSC",
             description="Ratio of causal particles to causal verbs",
@@ -5868,7 +6224,11 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=63,
             type_name="Situation Model",
-            label_ttlab="SMINTEr_germanet",
+            label_ttlab=(
+                "SMINTEr_germanet"
+                if lang == "de"
+                else "SMINTEr_wordnet"
+            ),
             label_v3="SMINTEr",
             label_v2="INTEC",
             description="Ratio of intentional particles to intentional verbs",
@@ -5906,7 +6266,11 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=65,
             type_name="Situation Model",
-            label_ttlab = "SMCAUSwn_germanet",
+            label_ttlab=(
+                "SMCAUSwn_germanet"
+                if lang == "de"
+                else "SMCAUSwn_wordnet"
+            ),
             label_v3="SMCAUSwn",
             label_v2="CAUSWN",
             description="WordNet verb overlap",
@@ -5946,6 +6310,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=67,
             type_name="Syntactic Complexity",
+            label_ttlab='SYNLE',
             label_v3="SYNLE",
             label_v2="SYNLE",
             description="Left embeddedness, words before main verb, mean",
@@ -5964,6 +6329,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=68,
             type_name="Syntactic Complexity",
+            label_ttlab='SYNNP',
             label_v3="SYNNP",
             label_v2="SYNNP",
             description="Number of modifiers per noun phrase, mean",
@@ -5982,6 +6348,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=69,
             type_name="Syntactic Complexity",
+            label_ttlab='SYNMEDpos',
             label_v3="SYNMEDpos",
             label_v2="MEDwtm",
             description="Minimal Edit Distance, part of speech",
@@ -6000,6 +6367,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=70,
             type_name="Syntactic Complexity",
+            label_ttlab='SYNMEDwrd',
             label_v3="SYNMEDwrd",
             label_v2="MEDawm",
             description="Minimal Edit Distance, all words",
@@ -6018,6 +6386,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=71,
             type_name="Syntactic Complexity",
+            label_ttlab='SYNMEDlem',
             label_v3="SYNMEDlem",
             label_v2="MEDalm",
             description="Minimal Edit Distance, lemmas",
@@ -6036,6 +6405,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=72,
             type_name="Syntactic Complexity",
+            label_ttlab='SYNSTRUTa',
             label_v3="SYNSTRUTa",
             label_v2="STRUTa",
             description="Sentence syntax similarity, adjacent sentences, mean",
@@ -6056,6 +6426,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=73,
             type_name="Syntactic Complexity",
+            label_ttlab='SYNSTRUTt',
             label_v3="SYNSTRUTt",
             label_v2="STRUTt",
             description="Sentence syntax similarity, all combinations, across paragraphs, mean",
@@ -6083,6 +6454,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=74,
             type_name="Syntactic Pattern Density",
+            label_ttlab='DRNP',
             label_v3="DRNP",
             label_v2="n/a",
             description="Noun phrase density, incidence",
@@ -6101,6 +6473,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=75,
             type_name="Syntactic Pattern Density",
+            label_ttlab='DRVP',
             label_v3="DRVP",
             label_v2="n/a",
             description="Verb phrase density, incidence",
@@ -6119,6 +6492,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=76,
             type_name="Syntactic Pattern Density",
+            label_ttlab='DRAP',
             label_v3="DRAP",
             label_v2="n/a",
             description="Adverbial phrase density, incidence",
@@ -6137,6 +6511,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=77,
             type_name="Syntactic Pattern Density",
+            label_ttlab='DRPP',
             label_v3="DRPP",
             label_v2="n/a",
             description="Preposition phrase density, incidence",
@@ -6155,6 +6530,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=78,
             type_name="Syntactic Pattern Density",
+            label_ttlab='DRPVAL',
             label_v3="DRPVAL",
             label_v2="AGLSPSVi",
             description="Agentless passive voice density, incidence",
@@ -6192,6 +6568,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=80,
             type_name="Syntactic Pattern Density",
+            label_ttlab='DRGERUND',
             label_v3="DRGERUND",
             label_v2="GERUNDi",
             description="Gerund density, incidence",
@@ -6210,6 +6587,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=81,
             type_name="Syntactic Pattern Density",
+            label_ttlab='DRINF',
             label_v3="DRINF",
             label_v2="INFi",
             description="Infinitive density, incidence",
@@ -6237,6 +6615,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=82,
             type_name="Word Information",
+            label_ttlab='WRDNOUN',
             label_v3="WRDNOUN",
             label_v2="NOUNi",
             description="Noun incidence",
@@ -6255,6 +6634,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=83,
             type_name="Word Information",
+            label_ttlab='WRDVERB',
             label_v3="WRDVERB",
             label_v2="VERBi",
             description="Verb incidence",
@@ -6273,6 +6653,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=84,
             type_name="Word Information",
+            label_ttlab='WRDADJ',
             label_v3="WRDADJ",
             label_v2="ADJi",
             description="Adjective incidence",
@@ -6291,6 +6672,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=85,
             type_name="Word Information",
+            label_ttlab='WRDADV',
             label_v3="WRDADV",
             label_v2="ADVi",
             description="Adverb incidence",
@@ -6309,6 +6691,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=86,
             type_name="Word Information",
+            label_ttlab='WRDPRO',
             label_v3="WRDPRO",
             label_v2="DENPRPi",
             description="Pronoun incidence",
@@ -6327,6 +6710,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=87,
             type_name="Word Information",
+            label_ttlab='WRDPRP1s',
             label_v3="WRDPRP1s",
             label_v2="n/a",
             description="First-person singular pronoun incidence",
@@ -6345,6 +6729,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=88,
             type_name="Word Information",
+            label_ttlab='WRDPRP1p',
             label_v3="WRDPRP1p",
             label_v2="n/a",
             description="First-person plural pronoun incidence",
@@ -6363,6 +6748,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=89,
             type_name="Word Information",
+            label_ttlab='WRDPRP2',
             label_v3="WRDPRP2",
             label_v2="PRO2i",
             description="Second-person pronoun incidence",
@@ -6381,6 +6767,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=90,
             type_name="Word Information",
+            label_ttlab='WRDPRP3s',
             label_v3="WRDPRP3s",
             label_v2="n/a",
             description="Third-person singular pronoun incidence",
@@ -6399,6 +6786,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=91,
             type_name="Word Information",
+            label_ttlab='WRDPRP3p',
             label_v3="WRDPRP3p",
             label_v2="n/a",
             description="Third-person plural pronoun incidence",
@@ -6418,6 +6806,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=92,
             type_name="Word Information",
+            label_ttlab='WRDFRQc',
             label_v3="WRDFRQc",
             label_v2="FRCLacwm",
             description="CELEX word frequency for content words, mean",
@@ -6437,6 +6826,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=93,
             type_name="Word Information",
+            label_ttlab='WRDFRQa',
             label_v3="WRDFRQa",
             label_v2="FRCLaewm",
             description="CELEX Log frequency for all words, mean",
@@ -6456,6 +6846,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=94,
             type_name="Word Information",
+            label_ttlab='WRDFRQmc',
             label_v3="WRDFRQmc",
             label_v2="FRCLmcsm",
             description="CELEX Log minimum frequency for content words, mean",
@@ -6641,7 +7032,11 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=100,
             type_name="Word Information",
-            label_ttlab="WRDPOLc_germanet",
+            label_ttlab=(
+                "WRDPOLc_germanet"
+                if lang == "de"
+                else "WRDPOLc_wordnet"
+            ),
             label_v3="WRDPOLc",
             label_v2="POLm",
             description="Polysemy for content words, mean",
@@ -6676,7 +7071,11 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=101,
             type_name="Word Information",
-            label_ttlab="WRDHYPn_germanet",
+            label_ttlab=(
+                "WRDHYPn_germanet"
+                if lang == "de"
+                else "WRDHYPn_wordnet"
+            ),
             label_v3="WRDHYPn",
             label_v2="HYNOUNaw",
             description="Hypernymy for nouns, mean",
@@ -6690,7 +7089,11 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=102,
             type_name="Word Information",
-            label_ttlab="WRDHYPv_germanet",
+            label_ttlab=(
+                "WRDHYPv_germanet"
+                if lang == "de"
+                else "WRDHYPv_wordnet"
+            ),
             label_v3="WRDHYPv",
             label_v2="HYVERBaw",
             description="Hypernymy for verbs, mean",
@@ -6704,7 +7107,11 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         indices.append(Index(
             index=103,
             type_name="Word Information",
-            label_ttlab="WRDHYPnv_germanet",
+            label_ttlab=(
+                "WRDHYPnv_germanet"
+                if lang == "de"
+                else "WRDHYPnv_wordnet"
+            ),
             label_v3="WRDHYPnv",
             label_v2="HYPm",
             description="Hypernymy for nouns and verbs, mean",
@@ -6909,7 +7316,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         try:
             rdwstf = (
                 textstat.wiener_sachtextformel(request.text, variant=1)
-                if has_readability_input else None
+                if has_readability_input and lang == "de" else None
             )
             rdwstf_error = None
         except Exception as e:
@@ -6929,7 +7336,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         try:
             rdwstf = (
                 textstat.wiener_sachtextformel(request.text, variant=2)
-                if has_readability_input else None
+                if has_readability_input and lang == "de" else None
             )
             rdwstf_error = None
         except Exception as e:
@@ -6949,7 +7356,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         try:
             rdwstf = (
                 textstat.wiener_sachtextformel(request.text, variant=3)
-                if has_readability_input else None
+                if has_readability_input and lang == "de" else None
             )
             rdwstf_error = None
         except Exception as e:
@@ -6969,7 +7376,7 @@ def post_process(request: TextImagerRequest) -> TextImagerResponse:
         try:
             rdwstf = (
                 textstat.wiener_sachtextformel(request.text, variant=4)
-                if has_readability_input else None
+                if has_readability_input and lang == "de" else None
             )
             rdwstf_error = None
         except Exception as e:

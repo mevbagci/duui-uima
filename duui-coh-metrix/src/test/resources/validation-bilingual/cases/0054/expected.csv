@@ -1,0 +1,4 @@
+group,index,expected_value,tolerance,description,notes
+Lexical Diversity,LDTTRc,0.666666666667,0.0001,"Lexical diversity, type-token ratio for content-word lemmas",
+Lexical Diversity,LDTTRa,0.666666666667,0.0001,"Lexical diversity, type-token ratio for all alphabetic surface words",
+Lexical Diversity,LDMTLDa,2.52,1e-06,"Lexical diversity, MTLD, all words","CORRECTED_EXPECTATION_2026-09-01: Package-specific bidirectional MTLD result for the alphabetic surface-token sequence. Reference: lexical-diversity 0.1.1 mtld(), threshold 0.72 and minimum factor length 10."
