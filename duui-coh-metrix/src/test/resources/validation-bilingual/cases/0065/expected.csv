@@ -1,0 +1,2 @@
+group,index,expected_value,tolerance,description,notes
+Lexical Diversity,LDVOCDa,25.290861366565,0.001,"Lexical diversity, VOCD, all words",INDEPENDENT_REF: exact source-equivalent lexicalrichness==0.5.1 vocd() procedure over lowercase alphabetic surface tokens; 60 tokens; ntokens=50; sample sizes 35..50; 100 random samples per size (hard-coded in v0.5.1 source); iterations=3; seed=42; SciPy curve_fit against ttr_nd. No DUUI/Coh-Metrix output used. Dedicated >50-token test because default vocd() rejects texts with <=50 tokens.

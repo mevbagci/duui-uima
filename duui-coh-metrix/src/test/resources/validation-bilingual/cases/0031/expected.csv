@@ -1,0 +1,12 @@
+group,index,expected_value,tolerance,description,notes
+Descriptive,DESPC,1,0.0001,Paragraph count,"Independent manual count from the controlled English text (population SD, punctuation excluded); syllables were selected to be unambiguous."
+Descriptive,DESSC,2,0.0001,Sentence count,"Independent manual count from the controlled English text (population SD, punctuation excluded); syllables were selected to be unambiguous."
+Descriptive,DESWC,7,0.0001,Word count,"Independent manual count from the controlled English text (population SD, punctuation excluded); syllables were selected to be unambiguous."
+Descriptive,DESPL,2,0.0001,Paragraph length mean,"Independent manual count from the controlled English text (population SD, punctuation excluded); syllables were selected to be unambiguous."
+Descriptive,DESPLd,0,0.0001,Paragraph length stddev,"Independent manual count from the controlled English text (population SD, punctuation excluded); syllables were selected to be unambiguous."
+Descriptive,DESSL,3.5,0.0001,Sentence length mean,"Independent manual count from the controlled English text (population SD, punctuation excluded); syllables were selected to be unambiguous."
+Descriptive,DESSLd,1.5,0.0001,Sentence length stddev,"Independent manual count from the controlled English text (population SD, punctuation excluded); syllables were selected to be unambiguous."
+Descriptive,DESWLsy,1,0.0001,Word syllable mean,"Independent manual count from the controlled English text (population SD, punctuation excluded); syllables were selected to be unambiguous."
+Descriptive,DESWLsyd,0,0.0001,Word syllable stddev,"Independent manual count from the controlled English text (population SD, punctuation excluded); syllables were selected to be unambiguous."
+Descriptive,DESWLlt,4.28571428571,0.0001,Word letter mean,"Independent manual count from the controlled English text (population SD, punctuation excluded); syllables were selected to be unambiguous."
+Descriptive,DESWLltd,1.16057691495,0.0001,Word letter stddev,"Independent manual count from the controlled English text (population SD, punctuation excluded); syllables were selected to be unambiguous."

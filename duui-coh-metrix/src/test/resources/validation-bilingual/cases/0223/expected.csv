@@ -1,0 +1,8 @@
+group,index,expected_value,tolerance,description,notes
+Syntactic Complexity,SYNLE,2.0,0.0001,"Left embeddedness, mean number of lexical tokens before the sentence root","Expected value derived independently from the spaCy token, lemma, POS, dependency, noun-chunk and paragraph annotations."
+Syntactic Complexity,SYNNP,1.0,0.0001,Mean number of modifier dependencies per noun chunk,"Expected value derived independently from the spaCy token, lemma, POS, dependency, noun-chunk and paragraph annotations."
+Syntactic Complexity,SYNMEDpos,0.0,0.0001,Mean normalized edit distance between adjacent POS sequences,"Expected value derived independently from the spaCy token, lemma, POS, dependency, noun-chunk and paragraph annotations."
+Syntactic Complexity,SYNMEDwrd,0.25,0.0001,Mean normalized edit distance between adjacent word sequences,"Expected value derived independently from the spaCy token, lemma, POS, dependency, noun-chunk and paragraph annotations."
+Syntactic Complexity,SYNMEDlem,0.25,0.0001,Mean normalized edit distance between adjacent lemma sequences,"Expected value derived independently from the spaCy token, lemma, POS, dependency, noun-chunk and paragraph annotations."
+Syntactic Complexity,SYNSTRUTa,1.0,0.0001,Mean structural similarity between adjacent sentence dependency-POS node sets,"Expected value derived independently from the spaCy token, lemma, POS, dependency, noun-chunk and paragraph annotations."
+Syntactic Complexity,SYNSTRUTt,1.0,0.0001,Mean structural similarity between all paragraph dependency-POS node sets,"Expected value derived independently from the spaCy token, lemma, POS, dependency, noun-chunk and paragraph annotations."

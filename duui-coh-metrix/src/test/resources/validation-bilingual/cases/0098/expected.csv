@@ -1,0 +1,9 @@
+group,index,expected_value,tolerance,description,notes
+Situation Model,SMCAUSv,0,1e-06,Causal verb incidence,
+Situation Model,SMCAUSvp,0,1e-06,Causal verbs and causal particles incidence,
+Situation Model,SMINTEp,0,1e-06,Intentional verbs incidence,
+Situation Model,SMCAUSr,NaN,1e-06,Ratio of causal particles to causal verbs,Expected NaN under the input-sufficiency rule: no causal-verb denominator.
+Situation Model,SMINTEr,NaN,1e-06,Ratio of intentional particles to intentional verbs,Expected NaN under the input-sufficiency rule: no intentional-verb denominator.
+Situation Model,SMCAUSlsa,NaN,1e-06,LSA verb overlap,INDEPENDENT_REF: calculated from pre-Coh-Metrix spaCy vectors. All unordered pairs of tokens annotated UPOS=VERB with vectors were compared by cosine similarity; the mean was rounded to three decimals. No Coh-Metrix output value was used. Expected NaN under the input-sufficiency rule: fewer than two verbs with usable vectors.
+Situation Model,SMCAUSwn,NaN,1e-06,WordNet verb overlap,"INDEPENDENT_REF: resource-independent Situation-Model invariant derived from the pre-Coh-Metrix log and the fixed documented particle inventory. The value does not depend on WordNet/GermaNet lexical membership (e.g. no VERB tokens, zero relevant particle numerator, or fewer than two verb tokens). Only 1 UPOS=VERB token(s), so there is no unordered verb pair. Expected NaN under the input-sufficiency rule: the pinned image does not bundle the licensed GermaNet resource."
+Situation Model,SMTEMP,NaN,1e-06,"Temporal cohesion, tense and aspect repetition, mean","Independent invariant: fewer than two sentences means there is no adjacent sentence pair, therefore SMTEMP=0. Expected NaN under the input-sufficiency rule: no adjacent sentence pair."

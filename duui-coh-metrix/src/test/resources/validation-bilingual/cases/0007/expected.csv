@@ -1,0 +1,10 @@
+group,index,expected_value,tolerance,description,notes
+Connectives,CNCAll,166.666666666667,0.01,"All connectives combined, incidence","Longest-match: ""ebenso wie"" zählt als genau ein Konnektor; das enthaltene ""ebenso"" wird nicht zusätzlich gezählt."
+Connectives,CNCCaus,0,0.01,"Causal connectives, incidence",
+Connectives,CNCLogic,0,0.01,"Logical connectives, incidence",
+Connectives,CNCADC,0,0.01,"Adversative connectives, incidence",
+Connectives,CNCTemp,0,0.01,"Temporal connectives, incidence",
+Connectives,CNCTempx,0,0.01,"Expanded temporal connectives, incidence",
+Connectives,CNCAdd,0,0.01,"Additive connectives, incidence",
+Connectives,CNCPos,166.666666666667,0.01,"Positive connectives, incidence","Positive-Kategorie: ""ebenso wie"" zählt einmal; das verschachtelte ""ebenso"" darf keinen zweiten Treffer erzeugen."
+Connectives,CNCNeg,0,0.01,"Negative connectives, incidence",

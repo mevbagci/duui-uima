@@ -1,0 +1,9 @@
+group,index,expected_value,tolerance,description,notes
+Situation Model,SMCAUSv,0,1e-06,Causal verb incidence,Independent structural zero for this controlled testcase.
+Situation Model,SMCAUSvp,0,1e-06,Causal verbs and causal particles incidence,Independent structural zero for this controlled testcase.
+Situation Model,SMINTEp,0,1e-06,Intentional verbs incidence,Independent structural zero for this controlled testcase.
+Situation Model,SMCAUSr,NaN,1e-06,Ratio of causal particles to causal verbs,Independent structural zero for this controlled testcase. Expected NaN under the input-sufficiency rule: no causal-verb denominator.
+Situation Model,SMINTEr,NaN,1e-06,Ratio of intentional particles to intentional verbs,Independent structural zero for this controlled testcase. Expected NaN under the input-sufficiency rule: no intentional-verb denominator.
+Situation Model,SMCAUSlsa,NaN,1e-06,LSA verb overlap,Independent structural zero for this controlled testcase. Expected NaN under the input-sufficiency rule: fewer than two verbs with usable vectors.
+Situation Model,SMCAUSwn,NaN,1e-06,WordNet verb overlap,Independent structural zero for this controlled testcase. Expected NaN under the input-sufficiency rule: fewer than two verbs for semantic comparison.
+Situation Model,SMTEMP,NaN,1e-06,Gleiches Präsens und unmarkierter Aspekt,Independent structural zero for this controlled testcase. Expected NaN under the input-sufficiency rule: no adjacent sentence pair.

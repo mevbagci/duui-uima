@@ -1,6 +1,19 @@
 .idea/
-target*/
-venv*/
 *.iml
+venv*/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Maven and Java test output
+target/
+validation-*.log
+hs_err_pid*.log
+replay_pid*.log
+*.dump
+*.dumpstream
+
+# Build-time and licensed resources
 src/main/resources/mrc_psycholinguistic_database.csv
-src/main/resources/germanet
+src/main/resources/germanet/
