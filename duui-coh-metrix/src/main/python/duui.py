@@ -169,7 +169,7 @@ def _non_punct_tokens(sentence: Sentence) -> List[Token]:
 
 def _has_complete_pos_annotations(sentence: Sentence) -> bool:
     tokens = _non_punct_tokens(sentence)
-    return bool(tokens) and all(
+    return all(
         bool((token.pos_coarse or "").strip())
         and (token.pos_coarse or "").strip() != "--"
         for token in tokens
@@ -186,7 +186,7 @@ def _has_complete_fine_pos_annotations(sentence: Sentence) -> bool:
 
 def _has_complete_dependency_annotations(sentence: Sentence) -> bool:
     tokens = _non_punct_tokens(sentence)
-    return bool(tokens) and all(
+    return all(
         bool((token.dep_type or "").strip())
         and token.head_index is not None
         for token in tokens

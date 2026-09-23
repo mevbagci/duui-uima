@@ -58,7 +58,7 @@ public class CohMetrixDockerValidationTest {
 //    static final String DOCKER_IMAGE =
 //            "duui-coh-metrix:review-fixes-20260909";
     static final String DOCKER_IMAGE =
-            "docker.texttechnologylab.org/duui-coh-metrix:0.1.0";
+            "docker.texttechnologylab.org/duui-coh-metrix:0.1.1";
 
     static final String INDEX_TYPE =
             "org.texttechnologylab.uima.type.cohmetrix.Index";
