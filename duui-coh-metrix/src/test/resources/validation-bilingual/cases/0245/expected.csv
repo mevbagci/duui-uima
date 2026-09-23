@@ -1,0 +1,9 @@
+group,index,expected_value,tolerance,description,notes
+Syntactic Pattern Density,DRNP,236.842105263158,0.01,"Noun phrase density, incidence",
+Syntactic Pattern Density,DRVP,236.8421052631579,0.01,"Verb phrase density, incidence",CORRECTED_EXPECTATION_2026-09-01: Verb phrase incidence: 9 VERB/AUX tokens over 38 non-punctuation tokens. Reference: Manual count from the frozen testcase annotation.
+Syntactic Pattern Density,DRAP,78.947368421053,0.01,"Adverb phrase density, incidence",
+Syntactic Pattern Density,DRPP,78.947368421053,0.01,"Preposition phrase density, incidence",
+Syntactic Pattern Density,DRPVAL,26.31578947368421,0.01,"Agentless passive voice density, incidence",CORRECTED_EXPECTATION_2026-09-01: Matches the supplied Coh-Metrix 3.0 validation example. One passive sentence over 38 non-punctuation tokens; the explicit 'vom Hund' agent is still counted.
+Syntactic Pattern Density,DRNEG,26.315789473684,0.01,"Negation density, incidence",
+Syntactic Pattern Density,DRGERUND,NaN,1e-06,"Gerund density, incidence",N/A: German has no direct grammatical gerund category. The implementation expectation is None; numeric 0 is only a CSV sentinel and must not be interpreted as a metric value. Expected NaN under the input-sufficiency rule for the static validation image.
+Syntactic Pattern Density,DRINF,78.94736842105263,0.01,"Infinitive density, incidence",CORRECTED_EXPECTATION_2026-09-01: Infinitive incidence: 3 qualifying infinitives over 38 non-punctuation tokens. Reference: Manual count from the frozen testcase annotation.

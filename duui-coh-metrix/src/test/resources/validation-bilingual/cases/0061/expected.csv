@@ -1,0 +1,4 @@
+group,index,expected_value,tolerance,description,notes
+Lexical Diversity,LDTTRc,0.5,0.0001,"Lexical diversity, type-token ratio for content-word lemmas",Independent calculation from manually specified alphabetic surface tokens/content lemmas; MTLD uses the published bidirectional factor procedure with TTR threshold 0.72.
+Lexical Diversity,LDTTRa,0.833333333333,0.0001,"Lexical diversity, type-token ratio for all alphabetic surface words",Independent calculation from manually specified alphabetic surface tokens/content lemmas; MTLD uses the published bidirectional factor procedure with TTR threshold 0.72.
+Lexical Diversity,LDMTLDa,10.08,1e-06,"Lexical diversity, MTLD, all words",Independent calculation from manually specified alphabetic surface tokens/content lemmas; MTLD uses the published bidirectional factor procedure with TTR threshold 0.72.

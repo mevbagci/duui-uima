@@ -1,0 +1,10 @@
+group,index,expected_value,tolerance,description,notes
+Connectives,CNCAll,200,0.01,"All connectives combined, incidence","Ein Oberflächentreffer ""darüber hinaus"" zählt für CNCAll genau einmal."
+Connectives,CNCCaus,0,0.01,"Causal connectives, incidence",
+Connectives,CNCLogic,0,0.01,"Logical connectives, incidence",
+Connectives,CNCADC,0,0.01,"Adversative connectives, incidence",
+Connectives,CNCTemp,0,0.01,"Temporal connectives, incidence",
+Connectives,CNCTempx,0,0.01,"Expanded temporal connectives, incidence",
+Connectives,CNCAdd,200,0.01,"Additive connectives, incidence","""darüber hinaus"" ist der Additive-Kategorie zugeordnet und zählt dort einmal."
+Connectives,CNCPos,200,0.01,"Positive connectives, incidence","""darüber hinaus"" ist zugleich der Positive-Kategorie zugeordnet und zählt dort ebenfalls einmal; Mehrfachklassifikation ist erlaubt."
+Connectives,CNCNeg,0,0.01,"Negative connectives, incidence",

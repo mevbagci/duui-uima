@@ -1,0 +1,10 @@
+group,index,expected_value,tolerance,description,notes
+Connectives,CNCAll,200,0.01,"All connectives combined, incidence","Independent manual longest-expression-first, non-overlapping phrase count; incidence = occurrences / non-punctuation words * 1000."
+Connectives,CNCCaus,0,0.01,"Causal connectives, incidence","Independent manual longest-expression-first, non-overlapping phrase count; incidence = occurrences / non-punctuation words * 1000."
+Connectives,CNCLogic,200,0.01,"Logical connectives, incidence","Independent manual longest-expression-first, non-overlapping phrase count; incidence = occurrences / non-punctuation words * 1000."
+Connectives,CNCADC,0,0.01,"Adversative connectives, incidence","Independent manual longest-expression-first, non-overlapping phrase count; incidence = occurrences / non-punctuation words * 1000."
+Connectives,CNCTemp,0,0.01,"Temporal connectives, incidence","Independent manual longest-expression-first, non-overlapping phrase count; incidence = occurrences / non-punctuation words * 1000."
+Connectives,CNCTempx,0,0.01,"Expanded temporal connectives, incidence","Independent manual longest-expression-first, non-overlapping phrase count; incidence = occurrences / non-punctuation words * 1000."
+Connectives,CNCAdd,200,0.01,"Additive connectives, incidence","Independent manual longest-expression-first, non-overlapping phrase count; incidence = occurrences / non-punctuation words * 1000."
+Connectives,CNCPos,0,0.01,"Positive connectives, incidence","Independent manual longest-expression-first, non-overlapping phrase count; incidence = occurrences / non-punctuation words * 1000."
+Connectives,CNCNeg,0,0.01,"Negative connectives, incidence","Independent manual longest-expression-first, non-overlapping phrase count; incidence = occurrences / non-punctuation words * 1000."

@@ -1,0 +1,12 @@
+group,index,expected_value,tolerance,description,notes
+Descriptive,DESPC,1,0.0001,Paragraph count,Independent manual count from the controlled English text; cat/eat are monosyllabic and apples has two syllables.
+Descriptive,DESSC,1,0.0001,Sentence count,Independent manual count from the controlled English text; cat/eat are monosyllabic and apples has two syllables.
+Descriptive,DESWC,3,0.0001,Word count,Independent manual count from the controlled English text; cat/eat are monosyllabic and apples has two syllables.
+Descriptive,DESPL,1,0.0001,Paragraph length mean,Independent manual count from the controlled English text; cat/eat are monosyllabic and apples has two syllables.
+Descriptive,DESPLd,0,0.0001,Paragraph length stddev,Independent manual count from the controlled English text; cat/eat are monosyllabic and apples has two syllables.
+Descriptive,DESSL,3,0.0001,Sentence length mean,Independent manual count from the controlled English text; cat/eat are monosyllabic and apples has two syllables.
+Descriptive,DESSLd,0,0.0001,Sentence length stddev,Independent manual count from the controlled English text; cat/eat are monosyllabic and apples has two syllables.
+Descriptive,DESWLsy,1.33333333333,0.0001,Word syllable mean,KNOWN_ISSUE_PYPHEN_RESOURCE: Independent manual reference is cat=1; eat=1; apples=2 syllables. The bundled English Pyphen dictionary currently returns no split position for apples and therefore 1 syllable. The gold value is retained; this resource-dependent mismatch is treated analogously to the spaCy annotation known issues.
+Descriptive,DESWLsyd,0.471404520791,0.0001,Word syllable stddev,KNOWN_ISSUE_PYPHEN_RESOURCE: Independent manual reference over [1; 1; 2] gives population standard deviation 0.471404520791. The bundled English Pyphen dictionary yields [1; 1; 1] and therefore 0. The gold value is retained; this resource-dependent mismatch is treated analogously to the spaCy annotation known issues.
+Descriptive,DESWLlt,4.33333333333,0.0001,Word letter mean,Independent manual count from the controlled English text; cat/eat are monosyllabic and apples has two syllables.
+Descriptive,DESWLltd,1.24721912892,0.0001,Word letter stddev,Independent manual count from the controlled English text; cat/eat are monosyllabic and apples has two syllables.

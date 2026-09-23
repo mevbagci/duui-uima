@@ -1,0 +1,12 @@
+group,index,expected_value,tolerance,description,notes
+Descriptive,DESPC,1.0,0.0001,Paragraph count,
+Descriptive,DESSC,1.0,0.0001,Sentence count,
+Descriptive,DESWC,3.0,0.0001,Word count,
+Descriptive,DESPL,1.0,0.0001,Paragraph length mean,
+Descriptive,DESPLd,0.0,0.0001,Paragraph length stddev,
+Descriptive,DESSL,3.0,0.0001,Sentence length mean,
+Descriptive,DESSLd,0.0,0.0001,Sentence length stddev,
+Descriptive,DESWLsy,1.3333333333333333,0.0001,Word syllable mean,"REAL_WORD_REFERENCE_2026-09-01: Haus=1, Baum=1, Flugzeug=2 syllables; mean=(1+1+2)/3. Haus and Flugzeug are also covered by the already passing tc002_simple_words Pyphen reference."
+Descriptive,DESWLsyd,0.4714045207910317,0.0001,Word syllable stddev,"REAL_WORD_REFERENCE_2026-09-01: Population SD (np.std) of the independently specified syllable counts [1,1,2]."
+Descriptive,DESWLlt,5.333333333333333,0.0001,Word letter mean,"REAL_WORD_REFERENCE_2026-09-01: The replacement preserves the original word lengths [4,4,8]."
+Descriptive,DESWLltd,1.8856180831641267,0.0001,Word letter stddev,"REAL_WORD_REFERENCE_2026-09-01: Population SD of the preserved word lengths [4,4,8]."

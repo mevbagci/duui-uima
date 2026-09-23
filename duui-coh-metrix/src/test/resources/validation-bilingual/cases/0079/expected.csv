@@ -1,0 +1,11 @@
+group,index,expected_value,tolerance,description,notes
+Referential Cohesion,CRFNO1,0.0000000000,1e-06,"Noun overlap, adjacent sentences, binary, mean",Tests exact noun surface overlap versus lemma-based argument/stem overlap.
+Referential Cohesion,CRFAO1,1.0000000000,1e-06,"Argument overlap, adjacent sentences, binary, mean",Tests exact noun surface overlap versus lemma-based argument/stem overlap.
+Referential Cohesion,CRFSO1,1.0000000000,1e-06,"Stem overlap, adjacent sentences, binary, mean",Tests exact noun surface overlap versus lemma-based argument/stem overlap.
+Referential Cohesion,CRFNOa,0.0000000000,1e-06,"Noun overlap, all sentences, binary, mean",Tests exact noun surface overlap versus lemma-based argument/stem overlap.
+Referential Cohesion,CRFAOa,1.0000000000,1e-06,"Argument overlap, all sentences, binary, mean",Tests exact noun surface overlap versus lemma-based argument/stem overlap.
+Referential Cohesion,CRFSOa,1.0000000000,1e-06,"Stem overlap, all sentences, binary, mean",Tests exact noun surface overlap versus lemma-based argument/stem overlap.
+Referential Cohesion,CRFCWO1,0.0000000000,1e-06,"Content word overlap, adjacent sentences, proportional, mean",Tests exact noun surface overlap versus lemma-based argument/stem overlap.
+Referential Cohesion,CRFCWO1d,0.0000000000,1e-06,"Content word overlap, adjacent sentences, proportional, standard deviation",Tests exact noun surface overlap versus lemma-based argument/stem overlap.
+Referential Cohesion,CRFCWOa,0.0000000000,1e-06,"Content word overlap, all sentences, proportional, mean",Tests exact noun surface overlap versus lemma-based argument/stem overlap.
+Referential Cohesion,CRFCWOad,0.0000000000,1e-06,"Content word overlap, all sentences, proportional, standard deviation",Tests exact noun surface overlap versus lemma-based argument/stem overlap.

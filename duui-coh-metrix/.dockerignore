@@ -1,5 +1,19 @@
+.git/
 .idea/
-target*/
-venv*/
 *.iml
+venv*/
+
+# Maven and Java test output
+target/
+validation-*.log
+hs_err_pid*.log
+replay_pid*.log
+*.dump
+*.dumpstream
+
+# Java test sources and frozen CAS fixtures are not needed by the image
+src/test/
+
+# Build-time and licensed resources
 src/main/resources/mrc_psycholinguistic_database.csv
+src/main/resources/germanet/

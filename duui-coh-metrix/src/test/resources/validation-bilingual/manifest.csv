@@ -1,0 +1,323 @@
+suite,case_id,xmi_resource,expected_resource
+Connectives_de,tc001_additive_logical,/validation-bilingual/cases/0001/input.xmi.gz,/validation-bilingual/cases/0001/expected.csv
+Connectives_de,tc002_causal,/validation-bilingual/cases/0002/input.xmi.gz,/validation-bilingual/cases/0002/expected.csv
+Connectives_de,tc003_adversative_negative,/validation-bilingual/cases/0003/input.xmi.gz,/validation-bilingual/cases/0003/expected.csv
+Connectives_de,tc004_temporal,/validation-bilingual/cases/0004/input.xmi.gz,/validation-bilingual/cases/0004/expected.csv
+Connectives_de,tc005_temporal_expanded,/validation-bilingual/cases/0005/input.xmi.gz,/validation-bilingual/cases/0005/expected.csv
+Connectives_de,tc006_mixed_all,/validation-bilingual/cases/0006/input.xmi.gz,/validation-bilingual/cases/0006/expected.csv
+Connectives_de,tc007_longest_same_category,/validation-bilingual/cases/0007/input.xmi.gz,/validation-bilingual/cases/0007/expected.csv
+Connectives_de,tc008_longest_cross_category,/validation-bilingual/cases/0008/input.xmi.gz,/validation-bilingual/cases/0008/expected.csv
+Connectives_de,tc009_same_expression_multiple_categories,/validation-bilingual/cases/0009/input.xmi.gz,/validation-bilingual/cases/0009/expected.csv
+Connectives_en,tc001_en_additive_logical,/validation-bilingual/cases/0010/input.xmi.gz,/validation-bilingual/cases/0010/expected.csv
+Connectives_en,tc002_en_causal,/validation-bilingual/cases/0011/input.xmi.gz,/validation-bilingual/cases/0011/expected.csv
+Connectives_en,tc003_en_adversative_negative,/validation-bilingual/cases/0012/input.xmi.gz,/validation-bilingual/cases/0012/expected.csv
+Connectives_en,tc004_en_temporal,/validation-bilingual/cases/0013/input.xmi.gz,/validation-bilingual/cases/0013/expected.csv
+Connectives_en,tc005_en_temporal_expanded,/validation-bilingual/cases/0014/input.xmi.gz,/validation-bilingual/cases/0014/expected.csv
+Connectives_en,tc006_en_positive_additive,/validation-bilingual/cases/0015/input.xmi.gz,/validation-bilingual/cases/0015/expected.csv
+Connectives_en,tc007_en_longest_cross_category,/validation-bilingual/cases/0016/input.xmi.gz,/validation-bilingual/cases/0016/expected.csv
+Connectives_en,tc008_en_mixed_all,/validation-bilingual/cases/0017/input.xmi.gz,/validation-bilingual/cases/0017/expected.csv
+Connectives_en,tc009_en_longest_same_category,/validation-bilingual/cases/0018/input.xmi.gz,/validation-bilingual/cases/0018/expected.csv
+Connectives_en,tc010_en_same_expression_multiple_categories,/validation-bilingual/cases/0019/input.xmi.gz,/validation-bilingual/cases/0019/expected.csv
+Descriptive_de,tc001_simple_words,/validation-bilingual/cases/0020/input.xmi.gz,/validation-bilingual/cases/0020/expected.csv
+Descriptive_de,tc002_simple_words,/validation-bilingual/cases/0021/input.xmi.gz,/validation-bilingual/cases/0021/expected.csv
+Descriptive_de,tc003_two_paragraphs,/validation-bilingual/cases/0022/input.xmi.gz,/validation-bilingual/cases/0022/expected.csv
+Descriptive_de,tc004_single_word_period,/validation-bilingual/cases/0023/input.xmi.gz,/validation-bilingual/cases/0023/expected.csv
+Descriptive_de,tc005_single_word_trailing_punctuation,/validation-bilingual/cases/0024/input.xmi.gz,/validation-bilingual/cases/0024/expected.csv
+Descriptive_de,tc006_two_words_internal_punctuation,/validation-bilingual/cases/0025/input.xmi.gz,/validation-bilingual/cases/0025/expected.csv
+Descriptive_de,tc007_punctuation_only,/validation-bilingual/cases/0026/input.xmi.gz,/validation-bilingual/cases/0026/expected.csv
+Descriptive_de,tc008_single_word_syllable_control,/validation-bilingual/cases/0027/input.xmi.gz,/validation-bilingual/cases/0027/expected.csv
+Descriptive_en,tc001_en_single_sentence,/validation-bilingual/cases/0028/input.xmi.gz,/validation-bilingual/cases/0028/expected.csv
+Descriptive_en,tc002_en_two_equal_sentences,/validation-bilingual/cases/0029/input.xmi.gz,/validation-bilingual/cases/0029/expected.csv
+Descriptive_en,tc003_en_two_paragraphs,/validation-bilingual/cases/0030/input.xmi.gz,/validation-bilingual/cases/0030/expected.csv
+Descriptive_en,tc004_en_variable_sentence_length,/validation-bilingual/cases/0031/input.xmi.gz,/validation-bilingual/cases/0031/expected.csv
+Descriptive_en,tc005_en_commas_excluded,/validation-bilingual/cases/0032/input.xmi.gz,/validation-bilingual/cases/0032/expected.csv
+Descriptive_en,tc006_en_syllable_variation,/validation-bilingual/cases/0033/input.xmi.gz,/validation-bilingual/cases/0033/expected.csv
+Descriptive_en,tc007_en_variable_paragraph_lengths,/validation-bilingual/cases/0034/input.xmi.gz,/validation-bilingual/cases/0034/expected.csv
+LSA_de,tc001_identical_sentences,/validation-bilingual/cases/0035/input.xmi.gz,/validation-bilingual/cases/0035/expected.csv
+LSA_de,tc002_lsagn_first_sentence_no_context,/validation-bilingual/cases/0036/input.xmi.gz,/validation-bilingual/cases/0036/expected.csv
+LSA_de,tc003_similar_sentences,/validation-bilingual/cases/0037/input.xmi.gz,/validation-bilingual/cases/0037/expected.csv
+LSA_de,tc004_different_sentences,/validation-bilingual/cases/0038/input.xmi.gz,/validation-bilingual/cases/0038/expected.csv
+LSA_de,tc005_identical_paragraphs,/validation-bilingual/cases/0039/input.xmi.gz,/validation-bilingual/cases/0039/expected.csv
+LSA_de,tc006_different_paragraphs,/validation-bilingual/cases/0040/input.xmi.gz,/validation-bilingual/cases/0040/expected.csv
+LSA_de,tc007_repeated_information,/validation-bilingual/cases/0041/input.xmi.gz,/validation-bilingual/cases/0041/expected.csv
+LSA_de,tc008_new_information,/validation-bilingual/cases/0042/input.xmi.gz,/validation-bilingual/cases/0042/expected.csv
+LSA_de,tc009_mixed,/validation-bilingual/cases/0043/input.xmi.gz,/validation-bilingual/cases/0043/expected.csv
+LSA_de,tc010_long_same_topic,/validation-bilingual/cases/0044/input.xmi.gz,/validation-bilingual/cases/0044/expected.csv
+LSA_de,tc011_long_different_topics,/validation-bilingual/cases/0045/input.xmi.gz,/validation-bilingual/cases/0045/expected.csv
+LSA_de,tc012_three_topics,/validation-bilingual/cases/0046/input.xmi.gz,/validation-bilingual/cases/0046/expected.csv
+LSA_de,tc013_gradual_topic_shift,/validation-bilingual/cases/0047/input.xmi.gz,/validation-bilingual/cases/0047/expected.csv
+LSA_en,tc001_en_identical_sentences_one_paragraph,/validation-bilingual/cases/0048/input.xmi.gz,/validation-bilingual/cases/0048/expected.csv
+LSA_en,tc002_en_identical_sentences_two_paragraphs,/validation-bilingual/cases/0049/input.xmi.gz,/validation-bilingual/cases/0049/expected.csv
+LSA_en,tc003_en_four_identical_sentences_two_paragraphs,/validation-bilingual/cases/0050/input.xmi.gz,/validation-bilingual/cases/0050/expected.csv
+LSA_en,tc004_en_topic_contrast,/validation-bilingual/cases/0051/input.xmi.gz,/validation-bilingual/cases/0051/expected.csv
+LSA_en,tc005_en_repeated_then_new,/validation-bilingual/cases/0052/input.xmi.gz,/validation-bilingual/cases/0052/expected.csv
+LSA_en,tc006_en_lsagn_first_sentence_no_context,/validation-bilingual/cases/0053/input.xmi.gz,/validation-bilingual/cases/0053/expected.csv
+Lexical Diversity_de,tc001_surface_repetition,/validation-bilingual/cases/0054/input.xmi.gz,/validation-bilingual/cases/0054/expected.csv
+Lexical Diversity_de,tc002_lemma_repetition,/validation-bilingual/cases/0055/input.xmi.gz,/validation-bilingual/cases/0055/expected.csv
+Lexical Diversity_de,tc003_mixed_repetition,/validation-bilingual/cases/0056/input.xmi.gz,/validation-bilingual/cases/0056/expected.csv
+Lexical Diversity_de,tc004_longer_regression_ttr,/validation-bilingual/cases/0057/input.xmi.gz,/validation-bilingual/cases/0057/expected.csv
+Lexical Diversity_de,tc005_vocd_low_diversity,/validation-bilingual/cases/0058/input.xmi.gz,/validation-bilingual/cases/0058/expected.csv
+Lexical Diversity_de,tc006_vocd_high_diversity,/validation-bilingual/cases/0059/input.xmi.gz,/validation-bilingual/cases/0059/expected.csv
+Lexical Diversity_en,tc001_en_surface_repetition,/validation-bilingual/cases/0060/input.xmi.gz,/validation-bilingual/cases/0060/expected.csv
+Lexical Diversity_en,tc002_en_lemma_repetition,/validation-bilingual/cases/0061/input.xmi.gz,/validation-bilingual/cases/0061/expected.csv
+Lexical Diversity_en,tc003_en_mixed_repetition,/validation-bilingual/cases/0062/input.xmi.gz,/validation-bilingual/cases/0062/expected.csv
+Lexical Diversity_en,tc004_en_longer_regression_ttr,/validation-bilingual/cases/0063/input.xmi.gz,/validation-bilingual/cases/0063/expected.csv
+Lexical Diversity_en,tc005_en_vocd_low_diversity,/validation-bilingual/cases/0064/input.xmi.gz,/validation-bilingual/cases/0064/expected.csv
+Lexical Diversity_en,tc006_en_vocd_high_diversity,/validation-bilingual/cases/0065/input.xmi.gz,/validation-bilingual/cases/0065/expected.csv
+Readability_de,tc001_einfacher_kurzer_text,/validation-bilingual/cases/0066/input.xmi.gz,/validation-bilingual/cases/0066/expected.csv
+Readability_de,tc002_mehrsilbige_woerter,/validation-bilingual/cases/0067/input.xmi.gz,/validation-bilingual/cases/0067/expected.csv
+Readability_de,tc003_gemischter_text,/validation-bilingual/cases/0068/input.xmi.gz,/validation-bilingual/cases/0068/expected.csv
+Readability_de,tc004_wortwiederholungen,/validation-bilingual/cases/0069/input.xmi.gz,/validation-bilingual/cases/0069/expected.csv
+Readability_de,tc005_viele_komplexe_woerter,/validation-bilingual/cases/0070/input.xmi.gz,/validation-bilingual/cases/0070/expected.csv
+Readability_de,tc006_ein_und_mehrsilbig,/validation-bilingual/cases/0071/input.xmi.gz,/validation-bilingual/cases/0071/expected.csv
+Readability_de,tc007_mehrere_saetze,/validation-bilingual/cases/0072/input.xmi.gz,/validation-bilingual/cases/0072/expected.csv
+Readability_de,tc008_identische_schwierige_woerter,/validation-bilingual/cases/0073/input.xmi.gz,/validation-bilingual/cases/0073/expected.csv
+Readability_de,tc009_german_mixed_readability,/validation-bilingual/cases/0074/input.xmi.gz,/validation-bilingual/cases/0074/expected.csv
+Readability_en,tc001_en_short_monosyllabic,/validation-bilingual/cases/0075/input.xmi.gz,/validation-bilingual/cases/0075/expected.csv
+Readability_en,tc002_en_two_short_sentences,/validation-bilingual/cases/0076/input.xmi.gz,/validation-bilingual/cases/0076/expected.csv
+Readability_en,tc003_en_polysyllabic,/validation-bilingual/cases/0077/input.xmi.gz,/validation-bilingual/cases/0077/expected.csv
+Readability_en,tc004_en_mixed_length,/validation-bilingual/cases/0078/input.xmi.gz,/validation-bilingual/cases/0078/expected.csv
+Referential Cohesion_de,tc001_crfcwo_surface_form_not_lemma,/validation-bilingual/cases/0079/input.xmi.gz,/validation-bilingual/cases/0079/expected.csv
+Referential Cohesion_de,tc002_crfcwo_pronoun_content_word,/validation-bilingual/cases/0080/input.xmi.gz,/validation-bilingual/cases/0080/expected.csv
+Referential Cohesion_de,tc003_crfcwo_proper_noun_content_word,/validation-bilingual/cases/0081/input.xmi.gz,/validation-bilingual/cases/0081/expected.csv
+Referential Cohesion_de,tc004_crfcwo_repeated_current_occurrences,/validation-bilingual/cases/0082/input.xmi.gz,/validation-bilingual/cases/0082/expected.csv
+Referential Cohesion_de,tc005_crfcwo_temporal_direction,/validation-bilingual/cases/0083/input.xmi.gz,/validation-bilingual/cases/0083/expected.csv
+Referential Cohesion_de,tc006_crfcwo_local_and_global_scope,/validation-bilingual/cases/0084/input.xmi.gz,/validation-bilingual/cases/0084/expected.csv
+Referential Cohesion_de,tc007_crfcwo_standard_deviation,/validation-bilingual/cases/0085/input.xmi.gz,/validation-bilingual/cases/0085/expected.csv
+Referential Cohesion_en,tc001_en_crfcwo_surface_form_not_lemma,/validation-bilingual/cases/0086/input.xmi.gz,/validation-bilingual/cases/0086/expected.csv
+Referential Cohesion_en,tc002_en_crfcwo_pronoun_content_word,/validation-bilingual/cases/0087/input.xmi.gz,/validation-bilingual/cases/0087/expected.csv
+Referential Cohesion_en,tc003_en_crfcwo_proper_noun_content_word,/validation-bilingual/cases/0088/input.xmi.gz,/validation-bilingual/cases/0088/expected.csv
+Referential Cohesion_en,tc004_en_crfcwo_repeated_current_occurrences,/validation-bilingual/cases/0089/input.xmi.gz,/validation-bilingual/cases/0089/expected.csv
+Referential Cohesion_en,tc005_en_crfcwo_temporal_direction,/validation-bilingual/cases/0090/input.xmi.gz,/validation-bilingual/cases/0090/expected.csv
+Referential Cohesion_en,tc006_en_crfcwo_local_and_global_scope,/validation-bilingual/cases/0091/input.xmi.gz,/validation-bilingual/cases/0091/expected.csv
+Referential Cohesion_en,tc007_en_crfcwo_standard_deviation,/validation-bilingual/cases/0092/input.xmi.gz,/validation-bilingual/cases/0092/expected.csv
+Situation Model_de,tc001_smcaus_particle_singleword,/validation-bilingual/cases/0093/input.xmi.gz,/validation-bilingual/cases/0093/expected.csv
+Situation Model_de,tc002_smcaus_particle_multiword,/validation-bilingual/cases/0094/input.xmi.gz,/validation-bilingual/cases/0094/expected.csv
+Situation Model_de,tc003_smcaus_verb_plus_multiword_particle,/validation-bilingual/cases/0095/input.xmi.gz,/validation-bilingual/cases/0095/expected.csv
+Situation Model_de,tc004_smcaus_phrase_no_cross_sentence,/validation-bilingual/cases/0096/input.xmi.gz,/validation-bilingual/cases/0096/expected.csv
+Situation Model_de,tc005_smcaus_two_multiword_occurrences,/validation-bilingual/cases/0097/input.xmi.gz,/validation-bilingual/cases/0097/expected.csv
+Situation Model_de,tc006_smcaus_no_causal_or_intentional_markers,/validation-bilingual/cases/0098/input.xmi.gz,/validation-bilingual/cases/0098/expected.csv
+Situation Model_de,tc007_smcaus_single_causal_verb,/validation-bilingual/cases/0099/input.xmi.gz,/validation-bilingual/cases/0099/expected.csv
+Situation Model_de,tc008_smcaus_particle_and_causal_verb,/validation-bilingual/cases/0100/input.xmi.gz,/validation-bilingual/cases/0100/expected.csv
+Situation Model_de,tc009_smcaus_two_causal_verbs_one_particle,/validation-bilingual/cases/0101/input.xmi.gz,/validation-bilingual/cases/0101/expected.csv
+Situation Model_de,tc010_smintep_two_intentional_verbs,/validation-bilingual/cases/0102/input.xmi.gz,/validation-bilingual/cases/0102/expected.csv
+Situation Model_de,tc011_smcaus_mixed_causal_intentional,/validation-bilingual/cases/0103/input.xmi.gz,/validation-bilingual/cases/0103/expected.csv
+Situation Model_de,tc012_sminter_um_zu,/validation-bilingual/cases/0104/input.xmi.gz,/validation-bilingual/cases/0104/expected.csv
+Situation Model_de,tc013_sminter_um_nicht_zu,/validation-bilingual/cases/0105/input.xmi.gz,/validation-bilingual/cases/0105/expected.csv
+Situation Model_de,tc014_sminter_auf_dass,/validation-bilingual/cases/0106/input.xmi.gz,/validation-bilingual/cases/0106/expected.csv
+Situation Model_de,tc015_sminter_auf_dass_legacy_sz,/validation-bilingual/cases/0107/input.xmi.gz,/validation-bilingual/cases/0107/expected.csv
+Situation Model_de,tc016_sminter_two_particles_one_verb,/validation-bilingual/cases/0108/input.xmi.gz,/validation-bilingual/cases/0108/expected.csv
+Situation Model_de,tc017_sminter_verb_without_particle,/validation-bilingual/cases/0109/input.xmi.gz,/validation-bilingual/cases/0109/expected.csv
+Situation Model_de,tc018_sminter_discontinuous_um_zu_limitation,/validation-bilingual/cases/0110/input.xmi.gz,/validation-bilingual/cases/0110/expected.csv
+Situation Model_de,tc019_smcaus_semantic_no_verbs,/validation-bilingual/cases/0111/input.xmi.gz,/validation-bilingual/cases/0111/expected.csv
+Situation Model_de,tc020_smcaus_semantic_single_verb,/validation-bilingual/cases/0112/input.xmi.gz,/validation-bilingual/cases/0112/expected.csv
+Situation Model_de,tc021_smcaus_semantic_identical_verbs,/validation-bilingual/cases/0113/input.xmi.gz,/validation-bilingual/cases/0113/expected.csv
+Situation Model_de,tc022_smcaus_semantic_related_verbs,/validation-bilingual/cases/0114/input.xmi.gz,/validation-bilingual/cases/0114/expected.csv
+Situation Model_de,tc023_smcaus_semantic_distinct_verbs,/validation-bilingual/cases/0115/input.xmi.gz,/validation-bilingual/cases/0115/expected.csv
+Situation Model_de,tc024_smcaus_semantic_three_verbs,/validation-bilingual/cases/0116/input.xmi.gz,/validation-bilingual/cases/0116/expected.csv
+Situation Model_de,tc025_smtemp_present_repetition,/validation-bilingual/cases/0117/input.xmi.gz,/validation-bilingual/cases/0117/expected.csv
+Situation Model_de,tc026_smtemp_present_past_shift,/validation-bilingual/cases/0118/input.xmi.gz,/validation-bilingual/cases/0118/expected.csv
+Situation Model_de,tc027_smtemp_am_progressive_repetition,/validation-bilingual/cases/0119/input.xmi.gz,/validation-bilingual/cases/0119/expected.csv
+Situation Model_de,tc028_smtemp_progressive_tense_shift,/validation-bilingual/cases/0120/input.xmi.gz,/validation-bilingual/cases/0120/expected.csv
+Situation Model_de,tc029_smtemp_aspect_shift_same_tense,/validation-bilingual/cases/0121/input.xmi.gz,/validation-bilingual/cases/0121/expected.csv
+Situation Model_de,tc030_smtemp_tense_and_aspect_shift,/validation-bilingual/cases/0122/input.xmi.gz,/validation-bilingual/cases/0122/expected.csv
+Situation Model_de,tc031_smtemp_gerade_not_progressive,/validation-bilingual/cases/0123/input.xmi.gz,/validation-bilingual/cases/0123/expected.csv
+Situation Model_de,tc032_smtemp_am_progressive_vs_locative,/validation-bilingual/cases/0124/input.xmi.gz,/validation-bilingual/cases/0124/expected.csv
+Situation Model_de,tc033_smtemp_beim_progressive_vs_location,/validation-bilingual/cases/0125/input.xmi.gz,/validation-bilingual/cases/0125/expected.csv
+Situation Model_de,tc034_smtemp_completed_vs_unmarked_past,/validation-bilingual/cases/0126/input.xmi.gz,/validation-bilingual/cases/0126/expected.csv
+Situation Model_de,tc035_smtemp_completed_perfect_vs_unmarked,/validation-bilingual/cases/0127/input.xmi.gz,/validation-bilingual/cases/0127/expected.csv
+Situation Model_de,tc036_smtemp_telic_present_not_completed,/validation-bilingual/cases/0128/input.xmi.gz,/validation-bilingual/cases/0128/expected.csv
+Situation Model_de,tc037_smtemp_negated_completion,/validation-bilingual/cases/0129/input.xmi.gz,/validation-bilingual/cases/0129/expected.csv
+Situation Model_de,tc038_smtemp_almost_completion,/validation-bilingual/cases/0130/input.xmi.gz,/validation-bilingual/cases/0130/expected.csv
+Situation Model_de,tc039_smtemp_attempted_completion,/validation-bilingual/cases/0131/input.xmi.gz,/validation-bilingual/cases/0131/expected.csv
+Situation Model_de,tc040_smtemp_intended_completion,/validation-bilingual/cases/0132/input.xmi.gz,/validation-bilingual/cases/0132/expected.csv
+Situation Model_de,tc041_smtemp_future_bounded_not_completed,/validation-bilingual/cases/0133/input.xmi.gz,/validation-bilingual/cases/0133/expected.csv
+Situation Model_de,tc042_smtemp_conditional_completion_blocked,/validation-bilingual/cases/0134/input.xmi.gz,/validation-bilingual/cases/0134/expected.csv
+Situation Model_de,tc043_smtemp_perfect_pluperfect_shift,/validation-bilingual/cases/0135/input.xmi.gz,/validation-bilingual/cases/0135/expected.csv
+Situation Model_de,tc044_smtemp_present_future_shift,/validation-bilingual/cases/0136/input.xmi.gz,/validation-bilingual/cases/0136/expected.csv
+Situation Model_de,tc045_smtemp_future_i_future_ii_equivalence,/validation-bilingual/cases/0137/input.xmi.gz,/validation-bilingual/cases/0137/expected.csv
+Situation Model_de,tc046_smtemp_present_passive_not_future,/validation-bilingual/cases/0138/input.xmi.gz,/validation-bilingual/cases/0138/expected.csv
+Situation Model_de,tc047_smtemp_passive_tense_shift,/validation-bilingual/cases/0139/input.xmi.gz,/validation-bilingual/cases/0139/expected.csv
+Situation Model_de,tc048_smtemp_state_passive_vs_sein_perfect,/validation-bilingual/cases/0140/input.xmi.gz,/validation-bilingual/cases/0140/expected.csv
+Situation Model_de,tc049_smtemp_modal_present,/validation-bilingual/cases/0141/input.xmi.gz,/validation-bilingual/cases/0141/expected.csv
+Situation Model_de,tc050_smtemp_modal_past,/validation-bilingual/cases/0142/input.xmi.gz,/validation-bilingual/cases/0142/expected.csv
+Situation Model_de,tc051_smtemp_future_passive,/validation-bilingual/cases/0143/input.xmi.gz,/validation-bilingual/cases/0143/expected.csv
+Situation Model_de,tc052_smtemp_lexical_auxiliary_forms,/validation-bilingual/cases/0144/input.xmi.gz,/validation-bilingual/cases/0144/expected.csv
+Situation Model_de,tc053_smtemp_ersatzinfinitiv_perfect,/validation-bilingual/cases/0145/input.xmi.gz,/validation-bilingual/cases/0145/expected.csv
+Situation Model_de,tc054_smtemp_ersatzinfinitiv_tense_shift,/validation-bilingual/cases/0146/input.xmi.gz,/validation-bilingual/cases/0146/expected.csv
+Situation Model_de,tc055_smtemp_perception_ersatzinfinitiv,/validation-bilingual/cases/0147/input.xmi.gz,/validation-bilingual/cases/0147/expected.csv
+Situation Model_de,tc056_smtemp_passive_perfect_tense_shift,/validation-bilingual/cases/0148/input.xmi.gz,/validation-bilingual/cases/0148/expected.csv
+Situation Model_de,tc057_smtemp_future_perfect_sein,/validation-bilingual/cases/0149/input.xmi.gz,/validation-bilingual/cases/0149/expected.csv
+Situation Model_de,tc058_smtemp_future_state_passive,/validation-bilingual/cases/0150/input.xmi.gz,/validation-bilingual/cases/0150/expected.csv
+Situation Model_de,tc059_smtemp_perfect_progressive,/validation-bilingual/cases/0151/input.xmi.gz,/validation-bilingual/cases/0151/expected.csv
+Situation Model_en,tc001_smcaus_particle_because,/validation-bilingual/cases/0152/input.xmi.gz,/validation-bilingual/cases/0152/expected.csv
+Situation Model_en,tc002_smcaus_particle_in_order_to,/validation-bilingual/cases/0153/input.xmi.gz,/validation-bilingual/cases/0153/expected.csv
+Situation Model_en,tc003_smcaus_verb_plus_multiword_particle,/validation-bilingual/cases/0154/input.xmi.gz,/validation-bilingual/cases/0154/expected.csv
+Situation Model_en,tc004_smcaus_phrase_no_cross_sentence,/validation-bilingual/cases/0155/input.xmi.gz,/validation-bilingual/cases/0155/expected.csv
+Situation Model_en,tc005_smcaus_two_multiword_occurrences,/validation-bilingual/cases/0156/input.xmi.gz,/validation-bilingual/cases/0156/expected.csv
+Situation Model_en,tc006_sminter_in_order_to,/validation-bilingual/cases/0157/input.xmi.gz,/validation-bilingual/cases/0157/expected.csv
+Situation Model_en,tc007_sminter_in_order_not_to,/validation-bilingual/cases/0158/input.xmi.gz,/validation-bilingual/cases/0158/expected.csv
+Situation Model_en,tc008_sminter_so_as_to,/validation-bilingual/cases/0159/input.xmi.gz,/validation-bilingual/cases/0159/expected.csv
+Situation Model_en,tc009_sminter_so_as_not_to,/validation-bilingual/cases/0160/input.xmi.gz,/validation-bilingual/cases/0160/expected.csv
+Situation Model_en,tc010_sminter_in_order_that,/validation-bilingual/cases/0161/input.xmi.gz,/validation-bilingual/cases/0161/expected.csv
+Situation Model_en,tc011_sminter_lest,/validation-bilingual/cases/0162/input.xmi.gz,/validation-bilingual/cases/0162/expected.csv
+Situation Model_en,tc012_sminter_two_particles_one_verb,/validation-bilingual/cases/0163/input.xmi.gz,/validation-bilingual/cases/0163/expected.csv
+Situation Model_en,tc013_sminter_verb_without_particle,/validation-bilingual/cases/0164/input.xmi.gz,/validation-bilingual/cases/0164/expected.csv
+Situation Model_en,tc014_smcaus_semantic_no_verbs,/validation-bilingual/cases/0165/input.xmi.gz,/validation-bilingual/cases/0165/expected.csv
+Situation Model_en,tc015_smcaus_semantic_single_verb,/validation-bilingual/cases/0166/input.xmi.gz,/validation-bilingual/cases/0166/expected.csv
+Situation Model_en,tc016_smcaus_semantic_repeated_verb,/validation-bilingual/cases/0167/input.xmi.gz,/validation-bilingual/cases/0167/expected.csv
+Situation Model_en,tc017_smcaus_semantic_distinct_verbs,/validation-bilingual/cases/0168/input.xmi.gz,/validation-bilingual/cases/0168/expected.csv
+Situation Model_en,tc018_smintep_intentional_seed_plan,/validation-bilingual/cases/0169/input.xmi.gz,/validation-bilingual/cases/0169/expected.csv
+Situation Model_en,tc019_smcaus_causal_seed_cause,/validation-bilingual/cases/0170/input.xmi.gz,/validation-bilingual/cases/0170/expected.csv
+Situation Model_en,tc020_smtemp_present_repetition,/validation-bilingual/cases/0171/input.xmi.gz,/validation-bilingual/cases/0171/expected.csv
+Situation Model_en,tc021_smtemp_present_past_shift,/validation-bilingual/cases/0172/input.xmi.gz,/validation-bilingual/cases/0172/expected.csv
+Situation Model_en,tc022_smtemp_present_progressive,/validation-bilingual/cases/0173/input.xmi.gz,/validation-bilingual/cases/0173/expected.csv
+Situation Model_en,tc023_smtemp_progressive_tense_shift,/validation-bilingual/cases/0174/input.xmi.gz,/validation-bilingual/cases/0174/expected.csv
+Situation Model_en,tc024_smtemp_aspect_shift_same_tense,/validation-bilingual/cases/0175/input.xmi.gz,/validation-bilingual/cases/0175/expected.csv
+Situation Model_en,tc025_smtemp_present_perfect,/validation-bilingual/cases/0176/input.xmi.gz,/validation-bilingual/cases/0176/expected.csv
+Situation Model_en,tc026_smtemp_perfect_tense_shift,/validation-bilingual/cases/0177/input.xmi.gz,/validation-bilingual/cases/0177/expected.csv
+Situation Model_en,tc027_smtemp_perfect_vs_simple_present,/validation-bilingual/cases/0178/input.xmi.gz,/validation-bilingual/cases/0178/expected.csv
+Situation Model_en,tc028_smtemp_perfect_progressive,/validation-bilingual/cases/0179/input.xmi.gz,/validation-bilingual/cases/0179/expected.csv
+Situation Model_en,tc029_smtemp_perfect_progressive_tense_shift,/validation-bilingual/cases/0180/input.xmi.gz,/validation-bilingual/cases/0180/expected.csv
+Situation Model_en,tc030_smtemp_future_simple,/validation-bilingual/cases/0181/input.xmi.gz,/validation-bilingual/cases/0181/expected.csv
+Situation Model_en,tc031_smtemp_present_future_shift,/validation-bilingual/cases/0182/input.xmi.gz,/validation-bilingual/cases/0182/expected.csv
+Situation Model_en,tc032_smtemp_future_progressive,/validation-bilingual/cases/0183/input.xmi.gz,/validation-bilingual/cases/0183/expected.csv
+Situation Model_en,tc033_smtemp_future_perfect,/validation-bilingual/cases/0184/input.xmi.gz,/validation-bilingual/cases/0184/expected.csv
+Situation Model_en,tc034_smtemp_future_perfect_progressive,/validation-bilingual/cases/0185/input.xmi.gz,/validation-bilingual/cases/0185/expected.csv
+Situation Model_en,tc035_smtemp_future_aspect_shift,/validation-bilingual/cases/0186/input.xmi.gz,/validation-bilingual/cases/0186/expected.csv
+Situation Model_en,tc036_smtemp_present_passive,/validation-bilingual/cases/0187/input.xmi.gz,/validation-bilingual/cases/0187/expected.csv
+Situation Model_en,tc037_smtemp_passive_tense_shift,/validation-bilingual/cases/0188/input.xmi.gz,/validation-bilingual/cases/0188/expected.csv
+Situation Model_en,tc038_smtemp_progressive_passive,/validation-bilingual/cases/0189/input.xmi.gz,/validation-bilingual/cases/0189/expected.csv
+Situation Model_en,tc039_smtemp_perfect_passive,/validation-bilingual/cases/0190/input.xmi.gz,/validation-bilingual/cases/0190/expected.csv
+Situation Model_en,tc040_smtemp_future_passive,/validation-bilingual/cases/0191/input.xmi.gz,/validation-bilingual/cases/0191/expected.csv
+Situation Model_en,tc041_smtemp_future_perfect_passive,/validation-bilingual/cases/0192/input.xmi.gz,/validation-bilingual/cases/0192/expected.csv
+Situation Model_en,tc042_smtemp_modal_present_not_future,/validation-bilingual/cases/0193/input.xmi.gz,/validation-bilingual/cases/0193/expected.csv
+Situation Model_en,tc043_smtemp_conditional_vs_present,/validation-bilingual/cases/0194/input.xmi.gz,/validation-bilingual/cases/0194/expected.csv
+Situation Model_en,tc044_smtemp_conditional_progressive,/validation-bilingual/cases/0195/input.xmi.gz,/validation-bilingual/cases/0195/expected.csv
+Situation Model_en,tc045_smtemp_conditional_perfect,/validation-bilingual/cases/0196/input.xmi.gz,/validation-bilingual/cases/0196/expected.csv
+Situation Model_en,tc046_smtemp_conditional_perfect_progressive,/validation-bilingual/cases/0197/input.xmi.gz,/validation-bilingual/cases/0197/expected.csv
+Situation Model_en,tc047_smtemp_modal_passive,/validation-bilingual/cases/0198/input.xmi.gz,/validation-bilingual/cases/0198/expected.csv
+Situation Model_en,tc048_smtemp_conditional_perfect_passive,/validation-bilingual/cases/0199/input.xmi.gz,/validation-bilingual/cases/0199/expected.csv
+Situation Model_en,tc049_smtemp_modal_perfect,/validation-bilingual/cases/0200/input.xmi.gz,/validation-bilingual/cases/0200/expected.csv
+Situation Model_en,tc050_smtemp_tense_and_aspect_shift_zero,/validation-bilingual/cases/0201/input.xmi.gz,/validation-bilingual/cases/0201/expected.csv
+Situation Model_en,tc051_smtemp_three_sentence_pair_average,/validation-bilingual/cases/0202/input.xmi.gz,/validation-bilingual/cases/0202/expected.csv
+Syntactic Complexity_de,tc001_de_simple_lexical,/validation-bilingual/cases/0203/input.xmi.gz,/validation-bilingual/cases/0203/expected.csv
+Syntactic Complexity_de,tc002_add_object,/validation-bilingual/cases/0204/input.xmi.gz,/validation-bilingual/cases/0204/expected.csv
+Syntactic Complexity_de,tc003_adjacent_vs_across,/validation-bilingual/cases/0205/input.xmi.gz,/validation-bilingual/cases/0205/expected.csv
+Syntactic Complexity_de,tc004_de_copular_adjective,/validation-bilingual/cases/0206/input.xmi.gz,/validation-bilingual/cases/0206/expected.csv
+Syntactic Complexity_de,tc005_de_copular_noun,/validation-bilingual/cases/0207/input.xmi.gz,/validation-bilingual/cases/0207/expected.csv
+Syntactic Complexity_de,tc006_de_fronted_subordinate_clause,/validation-bilingual/cases/0208/input.xmi.gz,/validation-bilingual/cases/0208/expected.csv
+Syntactic Complexity_de,tc007_de_sentence_mean,/validation-bilingual/cases/0209/input.xmi.gz,/validation-bilingual/cases/0209/expected.csv
+Syntactic Complexity_de,tc008_structure_change,/validation-bilingual/cases/0210/input.xmi.gz,/validation-bilingual/cases/0210/expected.csv
+Syntactic Complexity_de,tc009_paragraphs,/validation-bilingual/cases/0211/input.xmi.gz,/validation-bilingual/cases/0211/expected.csv
+Syntactic Complexity_de,tc010_long_text,/validation-bilingual/cases/0212/input.xmi.gz,/validation-bilingual/cases/0212/expected.csv
+Syntactic Complexity_de,tc011_identical_structure,/validation-bilingual/cases/0213/input.xmi.gz,/validation-bilingual/cases/0213/expected.csv
+Syntactic Complexity_de,tc012_root_first,/validation-bilingual/cases/0214/input.xmi.gz,/validation-bilingual/cases/0214/expected.csv
+Syntactic Complexity_de,tc013_de_perfect_auxiliary,/validation-bilingual/cases/0215/input.xmi.gz,/validation-bilingual/cases/0215/expected.csv
+Syntactic Complexity_de,tc014_root_last,/validation-bilingual/cases/0216/input.xmi.gz,/validation-bilingual/cases/0216/expected.csv
+Syntactic Complexity_de,tc015_de_modal_auxiliary,/validation-bilingual/cases/0217/input.xmi.gz,/validation-bilingual/cases/0217/expected.csv
+Syntactic Complexity_de,tc016_noun_chunk_simple,/validation-bilingual/cases/0218/input.xmi.gz,/validation-bilingual/cases/0218/expected.csv
+Syntactic Complexity_de,tc017_hierarchy_regression,/validation-bilingual/cases/0219/input.xmi.gz,/validation-bilingual/cases/0219/expected.csv
+Syntactic Complexity_de,tc018_noun_chunk_complex,/validation-bilingual/cases/0220/input.xmi.gz,/validation-bilingual/cases/0220/expected.csv
+Syntactic Complexity_de,tc019_identical_sentences,/validation-bilingual/cases/0221/input.xmi.gz,/validation-bilingual/cases/0221/expected.csv
+Syntactic Complexity_de,tc020_long_multi_paragraph_stress,/validation-bilingual/cases/0222/input.xmi.gz,/validation-bilingual/cases/0222/expected.csv
+Syntactic Complexity_de,tc021_word_change,/validation-bilingual/cases/0223/input.xmi.gz,/validation-bilingual/cases/0223/expected.csv
+Syntactic Complexity_de,tc022_pos_change,/validation-bilingual/cases/0224/input.xmi.gz,/validation-bilingual/cases/0224/expected.csv
+Syntactic Complexity_en,tc001_en_simple_lexical,/validation-bilingual/cases/0225/input.xmi.gz,/validation-bilingual/cases/0225/expected.csv
+Syntactic Complexity_en,tc002_en_perfect_auxiliary,/validation-bilingual/cases/0226/input.xmi.gz,/validation-bilingual/cases/0226/expected.csv
+Syntactic Complexity_en,tc003_en_modal_auxiliary,/validation-bilingual/cases/0227/input.xmi.gz,/validation-bilingual/cases/0227/expected.csv
+Syntactic Complexity_en,tc004_en_copular_adjective,/validation-bilingual/cases/0228/input.xmi.gz,/validation-bilingual/cases/0228/expected.csv
+Syntactic Complexity_en,tc005_en_copular_noun,/validation-bilingual/cases/0229/input.xmi.gz,/validation-bilingual/cases/0229/expected.csv
+Syntactic Complexity_en,tc006_en_fronted_subordinate_clause,/validation-bilingual/cases/0230/input.xmi.gz,/validation-bilingual/cases/0230/expected.csv
+Syntactic Complexity_en,tc007_en_sentence_mean,/validation-bilingual/cases/0231/input.xmi.gz,/validation-bilingual/cases/0231/expected.csv
+Syntactic Complexity_en,tc008_en_noun_chunk_simple,/validation-bilingual/cases/0232/input.xmi.gz,/validation-bilingual/cases/0232/expected.csv
+Syntactic Complexity_en,tc009_en_noun_chunk_complex,/validation-bilingual/cases/0233/input.xmi.gz,/validation-bilingual/cases/0233/expected.csv
+Syntactic Complexity_en,tc010_en_identical_sentences,/validation-bilingual/cases/0234/input.xmi.gz,/validation-bilingual/cases/0234/expected.csv
+Syntactic Complexity_en,tc011_en_add_object,/validation-bilingual/cases/0235/input.xmi.gz,/validation-bilingual/cases/0235/expected.csv
+Syntactic Complexity_en,tc012_en_word_change,/validation-bilingual/cases/0236/input.xmi.gz,/validation-bilingual/cases/0236/expected.csv
+Syntactic Complexity_en,tc013_en_paragraph_scope,/validation-bilingual/cases/0237/input.xmi.gz,/validation-bilingual/cases/0237/expected.csv
+Syntactic Complexity_en,tc014_en_hierarchy_structure,/validation-bilingual/cases/0238/input.xmi.gz,/validation-bilingual/cases/0238/expected.csv
+Syntactic Complexity_en,tc015_en_fronted_clause,/validation-bilingual/cases/0239/input.xmi.gz,/validation-bilingual/cases/0239/expected.csv
+Syntactic Complexity_en,tc016_en_passive_structure,/validation-bilingual/cases/0240/input.xmi.gz,/validation-bilingual/cases/0240/expected.csv
+Syntactic Complexity_en,tc017_en_modifier_difference,/validation-bilingual/cases/0241/input.xmi.gz,/validation-bilingual/cases/0241/expected.csv
+Syntactic Pattern Density_de,tc001_simple_finite_verb,/validation-bilingual/cases/0242/input.xmi.gz,/validation-bilingual/cases/0242/expected.csv
+Syntactic Pattern Density_de,tc002_negated_infinitive,/validation-bilingual/cases/0243/input.xmi.gz,/validation-bilingual/cases/0243/expected.csv
+Syntactic Pattern Density_de,tc003_agentive_passive,/validation-bilingual/cases/0244/input.xmi.gz,/validation-bilingual/cases/0244/expected.csv
+Syntactic Pattern Density_de,tc004_mixed_syntactic_patterns,/validation-bilingual/cases/0245/input.xmi.gz,/validation-bilingual/cases/0245/expected.csv
+Syntactic Pattern Density_de,tc005_future_infinitive,/validation-bilingual/cases/0246/input.xmi.gz,/validation-bilingual/cases/0246/expected.csv
+Syntactic Pattern Density_de,tc006_adverbial_phrases,/validation-bilingual/cases/0247/input.xmi.gz,/validation-bilingual/cases/0247/expected.csv
+Syntactic Pattern Density_de,tc007_prepositional_phrases,/validation-bilingual/cases/0248/input.xmi.gz,/validation-bilingual/cases/0248/expected.csv
+Syntactic Pattern Density_de,tc008_agentless_passive,/validation-bilingual/cases/0249/input.xmi.gz,/validation-bilingual/cases/0249/expected.csv
+Syntactic Pattern Density_de,tc009_passive_von_agent,/validation-bilingual/cases/0250/input.xmi.gz,/validation-bilingual/cases/0250/expected.csv
+Syntactic Pattern Density_de,tc010_passive_durch_agent,/validation-bilingual/cases/0251/input.xmi.gz,/validation-bilingual/cases/0251/expected.csv
+Syntactic Pattern Density_de,tc011_state_passive,/validation-bilingual/cases/0252/input.xmi.gz,/validation-bilingual/cases/0252/expected.csv
+Syntactic Pattern Density_de,tc012_negation_forms,/validation-bilingual/cases/0253/input.xmi.gz,/validation-bilingual/cases/0253/expected.csv
+Syntactic Pattern Density_de,tc013_infinitive_variants,/validation-bilingual/cases/0254/input.xmi.gz,/validation-bilingual/cases/0254/expected.csv
+Syntactic Pattern Density_de,tc014_mixed_dr_stress,/validation-bilingual/cases/0255/input.xmi.gz,/validation-bilingual/cases/0255/expected.csv
+Syntactic Pattern Density_de,tc015_simple_phrase_density,/validation-bilingual/cases/0256/input.xmi.gz,/validation-bilingual/cases/0256/expected.csv
+Syntactic Pattern Density_de,tc016_perfect_auxiliary,/validation-bilingual/cases/0257/input.xmi.gz,/validation-bilingual/cases/0257/expected.csv
+Syntactic Pattern Density_de,tc017_modal_infinitive,/validation-bilingual/cases/0258/input.xmi.gz,/validation-bilingual/cases/0258/expected.csv
+Syntactic Pattern Density_de,tc018_zu_infinitive,/validation-bilingual/cases/0259/input.xmi.gz,/validation-bilingual/cases/0259/expected.csv
+Syntactic Pattern Density_de,tc019_long_mixed_pattern_stress,/validation-bilingual/cases/0260/input.xmi.gz,/validation-bilingual/cases/0260/expected.csv
+Syntactic Pattern Density_en,tc001_en_simple_finite_verb,/validation-bilingual/cases/0261/input.xmi.gz,/validation-bilingual/cases/0261/expected.csv
+Syntactic Pattern Density_en,tc002_en_perfect_auxiliary,/validation-bilingual/cases/0262/input.xmi.gz,/validation-bilingual/cases/0262/expected.csv
+Syntactic Pattern Density_en,tc003_en_modal_infinitive,/validation-bilingual/cases/0263/input.xmi.gz,/validation-bilingual/cases/0263/expected.csv
+Syntactic Pattern Density_en,tc004_en_to_infinitive,/validation-bilingual/cases/0264/input.xmi.gz,/validation-bilingual/cases/0264/expected.csv
+Syntactic Pattern Density_en,tc005_en_adverbial_phrases,/validation-bilingual/cases/0265/input.xmi.gz,/validation-bilingual/cases/0265/expected.csv
+Syntactic Pattern Density_en,tc006_en_prepositional_phrases,/validation-bilingual/cases/0266/input.xmi.gz,/validation-bilingual/cases/0266/expected.csv
+Syntactic Pattern Density_en,tc007_en_passive_agentless_vs_agentive,/validation-bilingual/cases/0267/input.xmi.gz,/validation-bilingual/cases/0267/expected.csv
+Syntactic Pattern Density_en,tc008_en_negation_forms,/validation-bilingual/cases/0268/input.xmi.gz,/validation-bilingual/cases/0268/expected.csv
+Syntactic Pattern Density_en,tc009_en_gerund_participle,/validation-bilingual/cases/0269/input.xmi.gz,/validation-bilingual/cases/0269/expected.csv
+Syntactic Pattern Density_en,tc010_en_infinitive_variants,/validation-bilingual/cases/0270/input.xmi.gz,/validation-bilingual/cases/0270/expected.csv
+Syntactic Pattern Density_en,tc011_en_mixed_dr_stress,/validation-bilingual/cases/0271/input.xmi.gz,/validation-bilingual/cases/0271/expected.csv
+Word Information_de,tc001_common_words,/validation-bilingual/cases/0272/input.xmi.gz,/validation-bilingual/cases/0272/expected.csv
+Word Information_de,tc002_rare_words,/validation-bilingual/cases/0273/input.xmi.gz,/validation-bilingual/cases/0273/expected.csv
+Word Information_de,tc003_inflections,/validation-bilingual/cases/0274/input.xmi.gz,/validation-bilingual/cases/0274/expected.csv
+Word Information_de,tc004_known_unknown,/validation-bilingual/cases/0275/input.xmi.gz,/validation-bilingual/cases/0275/expected.csv
+Word Information_de,tc005_mixed_pos,/validation-bilingual/cases/0276/input.xmi.gz,/validation-bilingual/cases/0276/expected.csv
+Word Information_de,tc006_nouns_and_two_verbs,/validation-bilingual/cases/0277/input.xmi.gz,/validation-bilingual/cases/0277/expected.csv
+Word Information_de,tc007_pronouns,/validation-bilingual/cases/0278/input.xmi.gz,/validation-bilingual/cases/0278/expected.csv
+Word Information_de,tc008_plural_noun_past_verb,/validation-bilingual/cases/0279/input.xmi.gz,/validation-bilingual/cases/0279/expected.csv
+Word Information_de,tc009_multiple_inflections,/validation-bilingual/cases/0280/input.xmi.gz,/validation-bilingual/cases/0280/expected.csv
+Word Information_de,tc010_two_inflected_verbs,/validation-bilingual/cases/0281/input.xmi.gz,/validation-bilingual/cases/0281/expected.csv
+Word Information_de,tc011_no_content_words,/validation-bilingual/cases/0282/input.xmi.gz,/validation-bilingual/cases/0282/expected.csv
+Word Information_de,tc012_simple_words,/validation-bilingual/cases/0283/input.xmi.gz,/validation-bilingual/cases/0283/expected.csv
+Word Information_de,tc013_single_known,/validation-bilingual/cases/0284/input.xmi.gz,/validation-bilingual/cases/0284/expected.csv
+Word Information_de,tc014_noun_and_verb,/validation-bilingual/cases/0285/input.xmi.gz,/validation-bilingual/cases/0285/expected.csv
+Word Information_de,tc015_repeated_words,/validation-bilingual/cases/0286/input.xmi.gz,/validation-bilingual/cases/0286/expected.csv
+Word Information_de,tc016_two_known,/validation-bilingual/cases/0287/input.xmi.gz,/validation-bilingual/cases/0287/expected.csv
+Word Information_de,tc017_repeated,/validation-bilingual/cases/0288/input.xmi.gz,/validation-bilingual/cases/0288/expected.csv
+Word Information_de,tc018_single_verb,/validation-bilingual/cases/0289/input.xmi.gz,/validation-bilingual/cases/0289/expected.csv
+Word Information_de,tc019_unknown_words,/validation-bilingual/cases/0290/input.xmi.gz,/validation-bilingual/cases/0290/expected.csv
+Word Information_de,tc020_mixed_frequency,/validation-bilingual/cases/0291/input.xmi.gz,/validation-bilingual/cases/0291/expected.csv
+Word Information_de,tc021_rare_names_numbers,/validation-bilingual/cases/0292/input.xmi.gz,/validation-bilingual/cases/0292/expected.csv
+Word Information_de,tc022_two_nouns_and_verb,/validation-bilingual/cases/0293/input.xmi.gz,/validation-bilingual/cases/0293/expected.csv
+Word Information_de,tc023_sentence_minimum,/validation-bilingual/cases/0294/input.xmi.gz,/validation-bilingual/cases/0294/expected.csv
+Word Information_de,tc024_two_verbs,/validation-bilingual/cases/0295/input.xmi.gz,/validation-bilingual/cases/0295/expected.csv
+Word Information_de,tc025_unknown_only,/validation-bilingual/cases/0296/input.xmi.gz,/validation-bilingual/cases/0296/expected.csv
+Word Information_de,tc026_punctuation_contractions,/validation-bilingual/cases/0297/input.xmi.gz,/validation-bilingual/cases/0297/expected.csv
+Word Information_de,tc027_verb_lemma,/validation-bilingual/cases/0298/input.xmi.gz,/validation-bilingual/cases/0298/expected.csv
+Word Information_en,tc001_en_basic_pos,/validation-bilingual/cases/0299/input.xmi.gz,/validation-bilingual/cases/0299/expected.csv
+Word Information_en,tc002_en_proper_noun,/validation-bilingual/cases/0300/input.xmi.gz,/validation-bilingual/cases/0300/expected.csv
+Word Information_en,tc003_en_first_person_singular,/validation-bilingual/cases/0301/input.xmi.gz,/validation-bilingual/cases/0301/expected.csv
+Word Information_en,tc004_en_first_person_plural,/validation-bilingual/cases/0302/input.xmi.gz,/validation-bilingual/cases/0302/expected.csv
+Word Information_en,tc005_en_second_person,/validation-bilingual/cases/0303/input.xmi.gz,/validation-bilingual/cases/0303/expected.csv
+Word Information_en,tc006_en_third_person_singular,/validation-bilingual/cases/0304/input.xmi.gz,/validation-bilingual/cases/0304/expected.csv
+Word Information_en,tc007_en_third_person_plural,/validation-bilingual/cases/0305/input.xmi.gz,/validation-bilingual/cases/0305/expected.csv
+Word Information_en,tc008_en_mixed_pronouns,/validation-bilingual/cases/0306/input.xmi.gz,/validation-bilingual/cases/0306/expected.csv
+Word Information_en,tc009_en_adjectives_adverbs,/validation-bilingual/cases/0307/input.xmi.gz,/validation-bilingual/cases/0307/expected.csv
+Word Information_en,tc010_en_no_target_pos,/validation-bilingual/cases/0308/input.xmi.gz,/validation-bilingual/cases/0308/expected.csv
+Word Information_en,tc011_en_frequency_common_words,/validation-bilingual/cases/0309/input.xmi.gz,/validation-bilingual/cases/0309/expected.csv
+Word Information_en,tc012_en_frequency_repetition,/validation-bilingual/cases/0310/input.xmi.gz,/validation-bilingual/cases/0310/expected.csv
+Word Information_en,tc013_en_frequency_rare_name,/validation-bilingual/cases/0311/input.xmi.gz,/validation-bilingual/cases/0311/expected.csv
+Word Information_en,tc014_en_frequency_sentence_minimum,/validation-bilingual/cases/0312/input.xmi.gz,/validation-bilingual/cases/0312/expected.csv
+Word Information_en,tc015_en_frequency_known_unknown_mix,/validation-bilingual/cases/0313/input.xmi.gz,/validation-bilingual/cases/0313/expected.csv
+Word Information_en,tc016_en_mrc_apple,/validation-bilingual/cases/0314/input.xmi.gz,/validation-bilingual/cases/0314/expected.csv
+Word Information_en,tc017_en_mrc_book,/validation-bilingual/cases/0315/input.xmi.gz,/validation-bilingual/cases/0315/expected.csv
+Word Information_en,tc018_en_mrc_concrete_abstract,/validation-bilingual/cases/0316/input.xmi.gz,/validation-bilingual/cases/0316/expected.csv
+Word Information_en,tc019_en_mrc_repetition,/validation-bilingual/cases/0317/input.xmi.gz,/validation-bilingual/cases/0317/expected.csv
+Word Information_en,tc020_en_wordnet_polysemy,/validation-bilingual/cases/0318/input.xmi.gz,/validation-bilingual/cases/0318/expected.csv
+Word Information_en,tc021_en_wordnet_noun_hypernym,/validation-bilingual/cases/0319/input.xmi.gz,/validation-bilingual/cases/0319/expected.csv
+Word Information_en,tc022_en_wordnet_verb_hypernym,/validation-bilingual/cases/0320/input.xmi.gz,/validation-bilingual/cases/0320/expected.csv
+Word Information_en,tc023_en_wordnet_noun_verb_combined,/validation-bilingual/cases/0321/input.xmi.gz,/validation-bilingual/cases/0321/expected.csv
+Word Information_en,tc024_en_wordnet_uncovered_control,/validation-bilingual/cases/0322/input.xmi.gz,/validation-bilingual/cases/0322/expected.csv

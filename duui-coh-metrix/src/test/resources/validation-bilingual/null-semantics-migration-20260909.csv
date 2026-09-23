@@ -1,0 +1,324 @@
+suite,case_id,index,old_expected,new_expected,reason
+Descriptive_de,tc007_punctuation_only,DESSL,0,NaN,current input/resource set does not support a defined calculation
+Descriptive_de,tc007_punctuation_only,DESSLd,0.0,NaN,current input/resource set does not support a defined calculation
+Descriptive_de,tc007_punctuation_only,DESWLsy,0,NaN,current input/resource set does not support a defined calculation
+Descriptive_de,tc007_punctuation_only,DESWLsyd,0,NaN,current input/resource set does not support a defined calculation
+Descriptive_de,tc007_punctuation_only,DESWLlt,0,NaN,current input/resource set does not support a defined calculation
+Descriptive_de,tc007_punctuation_only,DESWLltd,0,NaN,current input/resource set does not support a defined calculation
+Readability_de,tc001_einfacher_kurzer_text,RDL2_synstrutt,-16.5861514687842,NaN,current input/resource set does not support a defined calculation
+Readability_de,tc002_mehrsilbige_woerter,RDL2_synstrutt,-35.2403984989754,NaN,current input/resource set does not support a defined calculation
+Readability_de,tc003_gemischter_text,RDL2_synstrutt,-39.0906065647847,NaN,current input/resource set does not support a defined calculation
+Readability_de,tc004_wortwiederholungen,RDL2_synstrutt,-0.241617567056419,NaN,current input/resource set does not support a defined calculation
+Readability_de,tc005_viele_komplexe_woerter,RDL2_synstrutt,-34.2947807018725,NaN,current input/resource set does not support a defined calculation
+Readability_de,tc006_ein_und_mehrsilbig,RDL2_synstrutt,-11.1423824453591,NaN,current input/resource set does not support a defined calculation
+Readability_de,tc007_mehrere_saetze,RDL2_synstrutt,-27.995724923337,NaN,current input/resource set does not support a defined calculation
+Readability_de,tc008_identische_schwierige_woerter,RDL2_synstrutt,-17.0094087205474,NaN,current input/resource set does not support a defined calculation
+Readability_de,tc009_german_mixed_readability,RDL2_synstrutt,-33.3246323307478,NaN,current input/resource set does not support a defined calculation
+Readability_en,tc002_en_two_short_sentences,RDL2_synstrutt,-11.8809137942535,NaN,current input/resource set does not support a defined calculation
+Readability_en,tc004_en_mixed_length,RDL2_synstrutt,-17.6167961043805,NaN,current input/resource set does not support a defined calculation
+Situation Model_de,tc039_smtemp_attempted_completion,SMCAUSr,0.0,NaN,current input/resource set does not support a defined calculation
+Situation Model_de,tc057_smtemp_future_perfect_sein,SMCAUSr,0.0,NaN,current input/resource set does not support a defined calculation
+Syntactic Complexity_de,tc010_long_text,SYNLE,5.315789,2.789473684210526,retained ROOT-based SYNLE operationalization
+Syntactic Complexity_de,tc013_de_perfect_auxiliary,SYNLE,3,2.0,retained ROOT-based SYNLE operationalization
+Syntactic Complexity_de,tc015_de_modal_auxiliary,SYNLE,3,2.0,retained ROOT-based SYNLE operationalization
+Syntactic Pattern Density_de,tc001_simple_finite_verb,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc002_negated_infinitive,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc003_agentive_passive,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc004_mixed_syntactic_patterns,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc005_future_infinitive,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc006_adverbial_phrases,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc007_prepositional_phrases,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc008_agentless_passive,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc009_passive_von_agent,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc010_passive_durch_agent,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc011_state_passive,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc012_negation_forms,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc013_infinitive_variants,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc014_mixed_dr_stress,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc015_simple_phrase_density,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc016_perfect_auxiliary,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc017_modal_infinitive,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc018_zu_infinitive,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Syntactic Pattern Density_de,tc019_long_mixed_pattern_stress,DRGERUND,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc001_common_words,WRDFRQc,24.731340666734138,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc001_common_words,WRDFRQa,2.1145719570905,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc001_common_words,WRDFRQmc,0.7675700713900169,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc002_rare_words,WRDFRQc,10.54823751780015,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc002_rare_words,WRDFRQa,1.6835238234342866,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc002_rare_words,WRDFRQmc,0.0518881893105232,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc002_rare_words,WRDAOAc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc002_rare_words,WRDFAMc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc002_rare_words,WRDCNCc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc002_rare_words,WRDIMGc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc002_rare_words,WRDMEAc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc003_inflections,WRDFRQc,56.4384161108648,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc003_inflections,WRDFRQa,2.61411124809095,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc003_inflections,WRDFRQmc,1.32715991045779,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc004_known_unknown,WRDFRQc,1.6036171902061,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc004_known_unknown,WRDFRQa,0.003433182806495,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc004_known_unknown,WRDFRQmc,-0.448111810689477,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc005_mixed_pos,WRDFRQc,314.843508343798,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc005_mixed_pos,WRDFRQa,2.8269987385277,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc005_mixed_pos,WRDFRQmc,0.769172641327623,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc006_nouns_and_two_verbs,WRDFRQc,12.2943984582468,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc006_nouns_and_two_verbs,WRDFRQa,2.50407014444733,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc006_nouns_and_two_verbs,WRDFRQmc,0.66583154161736,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc007_pronouns,WRDFRQc,168.2372612214,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc007_pronouns,WRDFRQa,2.09610202359442,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc007_pronouns,WRDFRQmc,0.835753299089941,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc007_pronouns,WRDAOAc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc007_pronouns,WRDCNCc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc007_pronouns,WRDMEAc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc008_plural_noun_past_verb,WRDFRQc,6.59264844862509,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc008_plural_noun_past_verb,WRDFRQa,1.9065974559548,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc008_plural_noun_past_verb,WRDFRQmc,0.153948180638486,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc008_plural_noun_past_verb,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc008_plural_noun_past_verb,WRDFAMc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc008_plural_noun_past_verb,WRDCNCc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc008_plural_noun_past_verb,WRDIMGc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc008_plural_noun_past_verb,WRDMEAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc009_multiple_inflections,WRDFRQc,8.43383855589877,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc009_multiple_inflections,WRDFRQa,2.23725038459088,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc009_multiple_inflections,WRDFRQmc,0.0290094440301857,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc009_multiple_inflections,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc009_multiple_inflections,WRDFAMc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc009_multiple_inflections,WRDCNCc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc009_multiple_inflections,WRDIMGc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc009_multiple_inflections,WRDMEAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc010_two_inflected_verbs,WRDFRQc,47.7521563305818,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc010_two_inflected_verbs,WRDFRQa,2.32368112853052,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc010_two_inflected_verbs,WRDFRQmc,1.01428618720948,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc010_two_inflected_verbs,WRDAOAc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc010_two_inflected_verbs,WRDFAMc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc010_two_inflected_verbs,WRDCNCc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc010_two_inflected_verbs,WRDIMGc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc010_two_inflected_verbs,WRDMEAc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc011_no_content_words,WRDFRQc,1199.86201764977,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc011_no_content_words,WRDFRQa,3.61215083243397,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc011_no_content_words,WRDFRQmc,3.07913130569861,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc011_no_content_words,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc012_simple_words,WRDFRQc,51.3157500865953,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc012_simple_words,WRDFRQa,2.04858079829006,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc012_simple_words,WRDFRQmc,0.767570071390017,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc013_single_known,WRDFRQc,2.85087500481085,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc013_single_known,WRDFRQa,0.454978176302467,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc013_single_known,WRDFRQmc,0.454978176302467,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc014_noun_and_verb,WRDFRQc,6.59264844862509,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc014_noun_and_verb,WRDFRQa,2.05539957354681,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc014_noun_and_verb,WRDFRQmc,0.551888189310523,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc015_repeated_words,WRDFRQc,26.2178683478141,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc015_repeated_words,WRDFRQa,1.3203745348364,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc015_repeated_words,WRDFRQmc,1.07040212918841,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc015_repeated_words,WRDAOAc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc016_two_known,WRDFRQc,19.956125033676,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc016_two_known,WRDFRQa,1.01194985245589,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc016_two_known,WRDFRQmc,0.454978176302467,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc017_repeated,WRDFRQc,14.2543750240543,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc017_repeated,WRDFRQa,0.826292627071412,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc017_repeated,WRDFRQmc,0.454978176302467,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc018_single_verb,WRDFRQc,78.3990626322984,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc018_single_verb,WRDFRQa,1.87684754867823,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc018_single_verb,WRDFRQmc,1.89431087013273,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc018_single_verb,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc018_single_verb,WRDFAMc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc018_single_verb,WRDCNCc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc018_single_verb,WRDIMGc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc018_single_verb,WRDMEAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc019_unknown_words,WRDAOAc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc019_unknown_words,WRDFAMc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc019_unknown_words,WRDCNCc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc019_unknown_words,WRDIMGc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc019_unknown_words,WRDMEAc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc020_mixed_frequency,WRDFRQc,12.91802736554917,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc020_mixed_frequency,WRDFRQa,2.4371675593870235,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc020_mixed_frequency,WRDFRQmc,0.7675700713900169,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc021_rare_names_numbers,WRDFRQc,353.712134525461,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc021_rare_names_numbers,WRDFRQa,2.37821310029321,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc021_rare_names_numbers,WRDFRQmc,1.59969948682133,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc021_rare_names_numbers,WRDAOAc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc021_rare_names_numbers,WRDFAMc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc021_rare_names_numbers,WRDCNCc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc021_rare_names_numbers,WRDIMGc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc021_rare_names_numbers,WRDMEAc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc022_two_nouns_and_verb,WRDFRQc,6.88961459495956,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc022_two_nouns_and_verb,WRDFRQa,2.31654896507972,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc022_two_nouns_and_verb,WRDFRQmc,0.66583154161736,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc023_sentence_minimum,WRDFRQc,19.06522659467257,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc023_sentence_minimum,WRDFRQa,2.925086821373185,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc023_sentence_minimum,WRDFRQmc,0.9832519534695106,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc024_two_verbs,WRDFRQc,51.3157500865953,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc024_two_verbs,WRDFRQa,2.40721505220086,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc024_two_verbs,WRDFRQmc,1.38439710201676,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc024_two_verbs,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc025_unknown_only,WRDFRQc,0.356359375601356,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc025_unknown_only,WRDFRQa,-0.448111810689477,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc025_unknown_only,WRDFRQmc,-0.448111810689477,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc025_unknown_only,WRDAOAc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc025_unknown_only,WRDFAMc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc025_unknown_only,WRDCNCc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc025_unknown_only,WRDIMGc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc025_unknown_only,WRDMEAc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc026_punctuation_contractions,WRDFRQc,84.1720845170404,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc026_punctuation_contractions,WRDFRQa,2.10225951867046,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc026_punctuation_contractions,WRDFRQmc,0.878494446198195,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc027_verb_lemma,WRDFRQc,85.1698907687242,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc027_verb_lemma,WRDFRQa,1.8948351587412,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc027_verb_lemma,WRDFRQmc,1.93028609025866,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_de,tc027_verb_lemma,WRDAOAc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc027_verb_lemma,WRDFAMc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc027_verb_lemma,WRDCNCc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc027_verb_lemma,WRDIMGc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_de,tc027_verb_lemma,WRDMEAc,0.0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc001_en_basic_pos,WRDFRQc,63.6780548517303,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc001_en_basic_pos,WRDFRQa,2.32376293265327,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc001_en_basic_pos,WRDFRQmc,1.39436402171381,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc002_en_proper_noun,WRDFRQc,68.8942513122419,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc002_en_proper_noun,WRDFRQa,1.62321684115556,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc002_en_proper_noun,WRDFRQmc,1.23902798424875,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc002_en_proper_noun,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc002_en_proper_noun,WRDFAMc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc002_en_proper_noun,WRDCNCc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc002_en_proper_noun,WRDIMGc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc002_en_proper_noun,WRDMEAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc003_en_first_person_singular,WRDFRQc,116.345744875455,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc003_en_first_person_singular,WRDFRQa,2.2770444073019,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc003_en_first_person_singular,WRDFRQmc,1.84217235686893,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc003_en_first_person_singular,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc004_en_first_person_plural,WRDFRQc,116.345744875455,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc004_en_first_person_plural,WRDFRQa,2.13944072454266,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc004_en_first_person_plural,WRDFRQmc,1.84217235686893,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc004_en_first_person_plural,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc005_en_second_person,WRDFRQc,116.345744875455,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc005_en_second_person,WRDFRQa,2.14425062968354,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc005_en_second_person,WRDFRQmc,1.84217235686893,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc005_en_second_person,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc006_en_third_person_singular,WRDFRQc,90.2503132752229,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc006_en_third_person_singular,WRDFRQa,2.40890469720402,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc006_en_third_person_singular,WRDFRQmc,1.23902798424875,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc006_en_third_person_singular,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc006_en_third_person_singular,WRDFAMc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc006_en_third_person_singular,WRDCNCc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc006_en_third_person_singular,WRDIMGc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc006_en_third_person_singular,WRDMEAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc007_en_third_person_plural,WRDFRQc,116.345744875455,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc007_en_third_person_plural,WRDFRQa,2.45734031043246,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc007_en_third_person_plural,WRDFRQmc,1.84217235686893,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc007_en_third_person_plural,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc008_en_mixed_pronouns,WRDFRQc,198.186566904092,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc008_en_mixed_pronouns,WRDFRQa,2.58825075310806,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc008_en_mixed_pronouns,WRDFRQmc,2.29707421464403,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc008_en_mixed_pronouns,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc008_en_mixed_pronouns,WRDHYPn,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc009_en_adjectives_adverbs,WRDFRQc,270.456174153108,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc009_en_adjectives_adverbs,WRDFRQa,2.25508364652554,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc009_en_adjectives_adverbs,WRDFRQmc,1.55709131921151,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc009_en_adjectives_adverbs,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc010_en_no_target_pos,WRDFRQc,0,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc010_en_no_target_pos,WRDFRQa,3.75932862143929,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc010_en_no_target_pos,WRDFRQmc,0,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc010_en_no_target_pos,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc010_en_no_target_pos,WRDFAMc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc010_en_no_target_pos,WRDCNCc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc010_en_no_target_pos,WRDIMGc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc010_en_no_target_pos,WRDMEAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc010_en_no_target_pos,WRDPOLc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc010_en_no_target_pos,WRDHYPn,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc010_en_no_target_pos,WRDHYPv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc010_en_no_target_pos,WRDHYPnv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc011_en_frequency_common_words,WRDFRQc,86.0600169496042,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc011_en_frequency_common_words,WRDFRQa,2.6379083389545,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc011_en_frequency_common_words,WRDFRQmc,1.7275787007492,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc012_en_frequency_repetition,WRDFRQc,81.5373867774708,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc012_en_frequency_repetition,WRDFRQa,1.87697927345749,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc012_en_frequency_repetition,WRDFRQmc,1.78309602859903,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc012_en_frequency_repetition,WRDHYPv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc013_en_frequency_rare_name,WRDFRQc,144.088396410586,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc013_en_frequency_rare_name,WRDFRQa,2.15862900803286,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc013_en_frequency_rare_name,WRDFRQmc,2.15862900803286,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc013_en_frequency_rare_name,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc013_en_frequency_rare_name,WRDFAMc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc013_en_frequency_rare_name,WRDCNCc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc013_en_frequency_rare_name,WRDIMGc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc013_en_frequency_rare_name,WRDMEAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc013_en_frequency_rare_name,WRDHYPn,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc014_en_frequency_sentence_minimum,WRDFRQc,82.6210841030619,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc014_en_frequency_sentence_minimum,WRDFRQa,1.65732069496176,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc014_en_frequency_sentence_minimum,WRDFRQmc,1.4155049401038,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc014_en_frequency_sentence_minimum,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc015_en_frequency_known_unknown_mix,WRDFRQc,102.387723321843,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc015_en_frequency_known_unknown_mix,WRDFRQa,1.97086251831595,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc015_en_frequency_known_unknown_mix,WRDFRQmc,1.78309602859903,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc015_en_frequency_known_unknown_mix,WRDHYPv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc016_en_mrc_apple,WRDFRQc,36.9324048561431,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc016_en_mrc_apple,WRDFRQa,1.56740758768749,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc016_en_mrc_apple,WRDFRQmc,1.56740758768749,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc016_en_mrc_apple,WRDHYPn,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc016_en_mrc_apple,WRDHYPv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc016_en_mrc_apple,WRDHYPnv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc017_en_mrc_book,WRDFRQc,337.246607723936,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc017_en_mrc_book,WRDFRQa,2.52794758991048,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc017_en_mrc_book,WRDFRQmc,2.52794758991048,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc017_en_mrc_book,WRDHYPn,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc017_en_mrc_book,WRDHYPv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc017_en_mrc_book,WRDHYPnv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc018_en_mrc_concrete_abstract,WRDFRQc,75.6854212192791,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc018_en_mrc_concrete_abstract,WRDFRQa,1.87031285085753,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc018_en_mrc_concrete_abstract,WRDFRQmc,1.78309602859903,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc018_en_mrc_concrete_abstract,WRDHYPv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc019_en_mrc_repetition,WRDFRQc,137.037139145407,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc019_en_mrc_repetition,WRDFRQa,1.88758758842849,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc019_en_mrc_repetition,WRDFRQmc,1.56740758768749,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc019_en_mrc_repetition,WRDHYPv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc020_en_wordnet_polysemy,WRDFRQc,142.181089117546,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc020_en_wordnet_polysemy,WRDFRQa,2.15284183663247,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc020_en_wordnet_polysemy,WRDFRQmc,2.15284183663247,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc020_en_wordnet_polysemy,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc020_en_wordnet_polysemy,WRDHYPn,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc020_en_wordnet_polysemy,WRDHYPv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc020_en_wordnet_polysemy,WRDHYPnv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc021_en_wordnet_noun_hypernym,WRDFRQc,60.687050233099,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc021_en_wordnet_noun_hypernym,WRDFRQa,1.78309602859903,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc021_en_wordnet_noun_hypernym,WRDFRQmc,1.78309602859903,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc021_en_wordnet_noun_hypernym,WRDHYPn,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc021_en_wordnet_noun_hypernym,WRDHYPv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc021_en_wordnet_noun_hypernym,WRDHYPnv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc022_en_wordnet_verb_hypernym,WRDFRQc,144.521875340823,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc022_en_wordnet_verb_hypernym,WRDFRQa,2.01006082462789,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc022_en_wordnet_verb_hypernym,WRDFRQmc,1.62819406861328,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc022_en_wordnet_verb_hypernym,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc022_en_wordnet_verb_hypernym,WRDFAMc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc022_en_wordnet_verb_hypernym,WRDCNCc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc022_en_wordnet_verb_hypernym,WRDIMGc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc022_en_wordnet_verb_hypernym,WRDMEAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc022_en_wordnet_verb_hypernym,WRDHYPv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc023_en_wordnet_noun_verb_combined,WRDFRQc,25.7197498606943,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc023_en_wordnet_noun_verb_combined,WRDFRQa,1.3678205399811,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc023_en_wordnet_noun_verb_combined,WRDFRQmc,1.20281581159431,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc023_en_wordnet_noun_verb_combined,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc023_en_wordnet_noun_verb_combined,WRDFAMc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc023_en_wordnet_noun_verb_combined,WRDCNCc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc023_en_wordnet_noun_verb_combined,WRDIMGc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc023_en_wordnet_noun_verb_combined,WRDMEAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc023_en_wordnet_noun_verb_combined,WRDHYPv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc024_en_wordnet_uncovered_control,WRDFRQc,0,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc024_en_wordnet_uncovered_control,WRDFRQa,0,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc024_en_wordnet_uncovered_control,WRDFRQmc,0,NaN + numeric *_wiki10000 expectation,CELEX unavailable; preserve Wikipedia approximation under its TTLab label
+Word Information_en,tc024_en_wordnet_uncovered_control,WRDAOAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc024_en_wordnet_uncovered_control,WRDFAMc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc024_en_wordnet_uncovered_control,WRDCNCc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc024_en_wordnet_uncovered_control,WRDIMGc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc024_en_wordnet_uncovered_control,WRDMEAc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc024_en_wordnet_uncovered_control,WRDPOLc,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc024_en_wordnet_uncovered_control,WRDHYPn,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc024_en_wordnet_uncovered_control,WRDHYPv,0,NaN,current input/resource set does not support a defined calculation
+Word Information_en,tc024_en_wordnet_uncovered_control,WRDHYPnv,0,NaN,current input/resource set does not support a defined calculation
+Situation Model_de,tc029_smtemp_aspect_shift_same_tense,SMTEMP,0.5,NaN,GermaNet is unavailable and the am/beim nominal head cannot be classified reliably
+Situation Model_de,tc030_smtemp_tense_and_aspect_shift,SMTEMP,0.0,NaN,GermaNet is unavailable and the am/beim nominal head cannot be classified reliably
+Situation Model_de,tc031_smtemp_gerade_not_progressive,SMTEMP,0.5,NaN,GermaNet is unavailable and the am/beim nominal head cannot be classified reliably
+Situation Model_de,tc032_smtemp_am_progressive_vs_locative,SMTEMP,0.5,NaN,GermaNet is unavailable and the am/beim nominal head cannot be classified reliably
+Situation Model_de,tc033_smtemp_beim_progressive_vs_location,SMTEMP,0.5,NaN,GermaNet is unavailable and the am/beim nominal head cannot be classified reliably
+Word Information_en,tc010_en_no_target_pos,WRDFRQc_wiki10000,0,NaN,no content-word denominator is available
+Word Information_en,tc010_en_no_target_pos,WRDFRQmc_wiki10000,0,NaN,no sentence contains a covered content word
+Word Information_en,tc024_en_wordnet_uncovered_control,WRDFRQc_wiki10000,0,NaN,no content word is covered by the frequency resource
+Word Information_en,tc024_en_wordnet_uncovered_control,WRDFRQa_wiki10000,0,NaN,no alphabetic word is covered by the frequency resource
+Word Information_en,tc024_en_wordnet_uncovered_control,WRDFRQmc_wiki10000,0,NaN,no sentence contains a covered content word

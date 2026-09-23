@@ -1,0 +1,4 @@
+group,index,expected_value,tolerance,description,notes
+Lexical Diversity,LDTTRc,0.7,0.0001,"Lexical diversity, type-token ratio for content-word lemmas",
+Lexical Diversity,LDTTRa,0.727272727,0.0001,"Lexical diversity, type-token ratio for all alphabetic surface words",
+Lexical Diversity,LDMTLDa,33.44,1e-06,"Lexical diversity, MTLD, all words",Independent expectation from the published bidirectional MTLD procedure (TTR threshold 0.72) over alphabetic surface tokens; not taken from DUUI output.
