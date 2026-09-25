@@ -52,8 +52,6 @@ function serialize(inputCas, outputStream, parameters)
        selections_count = selections_count + 1
     end
 
-    print("Number of selections:", sentences_count - 1)
-
     outputStream:write(json.encode({
         selections = selections,
         lang = doc_lang,
